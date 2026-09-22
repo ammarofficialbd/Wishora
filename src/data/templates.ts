@@ -1,0 +1,150 @@
+import { TemplateItem } from '../types';
+
+export const TEMPLATES: TemplateItem[] = [
+  {
+    id: 'rajwada-vivah',
+    name: 'Royal Heritage',
+    category: 'hindu',
+    categoryLabel: 'Royal Weddings',
+    originalPrice: 7500,
+    discountPrice: 4999,
+    currency: '৳',
+    tag: 'Popular',
+    coverImage: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#B45309',
+    secondaryColor: '#FFFBEB',
+    aesthetic: 'Golden Foil Arch & Royal Palace Aesthetic',
+    groomName: 'Farhan',
+    brideName: 'Samira',
+    eventDate: '18 December 2026',
+    location: 'Radisson Blu Water Garden, Dhaka',
+    shlokaOrMantra: 'Two souls, one heartfelt journey under the golden stars',
+    description: 'Enchanting floral vines with warm golden arch motifs, ambient celebratory background melody, and interactive RSVP.',
+    musicTitle: 'Serenade of Elegance – Acoustic Sitar & Violin',
+    events: [
+      { id: '1', name: 'Gaye Holud & Mehendi Night', date: '16 Dec 2026', time: '06:00 PM', venue: 'Utshab Banquet Hall', address: 'Radisson Blu, Dhaka', dressCode: 'Bright Yellow & Floral Pastel' },
+      { id: '2', name: 'Sangeet & Musical Evening', date: '17 Dec 2026', time: '07:30 PM', venue: 'Grand Ballroom', address: 'Dhaka', dressCode: 'Glamorous Evening Elegance' },
+      { id: '3', name: 'Grand Wedding & Reception', date: '18 Dec 2026', time: '07:00 PM', venue: 'Royal Pavilion Courtyard', address: 'Airport Road, Dhaka', dressCode: 'Regal Traditional Silk & Velvet' }
+    ]
+  },
+  {
+    id: 'noor-zafar',
+    name: 'Noor-e-Zafar',
+    category: 'muslim',
+    categoryLabel: 'Nikah & Wedding',
+    originalPrice: 4999,
+    discountPrice: 3499,
+    currency: '৳',
+    tag: 'Bestseller',
+    coverImage: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#1E3A8A',
+    secondaryColor: '#F0F9FF',
+    aesthetic: 'Midnight Navy & Gold Foil Islamic Calligraphy',
+    groomName: 'Tanvir',
+    brideName: 'Nusrat',
+    eventDate: '24 November 2026',
+    location: 'Pan Pacific Sonargaon, Dhaka',
+    shlokaOrMantra: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ • In the name of Allah, Most Gracious, Most Merciful',
+    description: 'Intricate crescent moon motifs with regal geometric arches, gold foil typography, and heartfelt Nikah invitations.',
+    musicTitle: 'Sufi Soul Romance – Acoustic Oud & Strings',
+    events: [
+      { id: '1', name: 'Mehendi & Dholak Evening', date: '22 Nov 2026', time: '06:00 PM', venue: 'Balcony Lounge', address: 'Gulshan, Dhaka', dressCode: 'Emerald Green & Mustard' },
+      { id: '2', name: 'Holy Nikah Ceremony', date: '24 Nov 2026', time: '07:00 PM', venue: 'Grand Ballroom', address: 'Pan Pacific Sonargaon, Dhaka', dressCode: 'Royal Ivory & Gold Zari' },
+      { id: '3', name: 'Walima Gala Reception', date: '26 Nov 2026', time: '08:00 PM', venue: 'Surma Hall', address: 'Sonargaon, Dhaka', dressCode: 'Black Tie & Elegant Sarees' }
+    ]
+  },
+  {
+    id: 'celestial-ring',
+    name: 'Celestial Proposal',
+    category: 'engagement',
+    categoryLabel: 'Propose & Engagement',
+    originalPrice: 3999,
+    discountPrice: 2499,
+    currency: '৳',
+    tag: 'Trending',
+    coverImage: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#DB2777',
+    secondaryColor: '#FDF2F8',
+    aesthetic: 'Rose Gold Shimmer & Diamond Ring Motif',
+    groomName: 'Rayhan',
+    brideName: 'Sadia',
+    eventDate: '14 February 2027',
+    location: 'InterContinental, Dhaka',
+    shlokaOrMantra: 'She Said Yes! An unforgettable beginning to forever',
+    description: 'Soft rose gold watercolor backdrop, interactive ring unboxing animation, and heartfelt countdown for friends and family.',
+    musicTitle: 'Piano Melody – A Thousand Years',
+    events: [
+      { id: '1', name: 'Ring Exchange & Cocktails', date: '14 Feb 2027', time: '07:00 PM', venue: 'Rooftop Infinity Terrace', address: 'InterContinental, Dhaka', dressCode: 'Smart Formal & Gowns' }
+    ]
+  },
+  {
+    id: 'golden-jubilee',
+    name: 'Golden Jubilee Gala',
+    category: 'birthday',
+    categoryLabel: 'Birthday Celebration',
+    originalPrice: 2999,
+    discountPrice: 1999,
+    currency: '৳',
+    coverImage: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#D97706',
+    secondaryColor: '#FEF3C7',
+    aesthetic: 'Champagne Gold Sparkle & Confetti Poppers',
+    groomName: 'Ahnaf',
+    brideName: 'Birthday Gala',
+    eventDate: '25 November 2026',
+    location: 'The Westin, Gulshan, Dhaka',
+    shlokaOrMantra: 'Cheers to another year of great memories, love, and laughter!',
+    description: 'Dynamic interactive confetti popping, guest birthday wishes wall, countdown timer, and venue directions.',
+    musicTitle: 'Upbeat Celebration Swing',
+    events: [
+      { id: '1', name: 'Birthday Bash & Dinner', date: '25 Nov 2026', time: '07:30 PM', venue: 'Grand Pavilion Ballroom', address: 'The Westin Dhaka', dressCode: 'Smart Casual & Party Chic' }
+    ]
+  },
+  {
+    id: 'save-the-sunset',
+    name: 'Sunset Save The Date',
+    category: 'save-the-date',
+    categoryLabel: 'Save the Date',
+    originalPrice: 2499,
+    discountPrice: 1499,
+    currency: '৳',
+    coverImage: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#E11D48',
+    secondaryColor: '#FFF1F2',
+    aesthetic: 'Golden Hour Beach Romance & Calendar Sync',
+    groomName: 'Zayan',
+    brideName: 'Ayla',
+    eventDate: '18-20 February 2027',
+    location: 'Sea Pearl Beach Resort, Cox\'s Bazar',
+    shlokaOrMantra: 'Save our date as we tie the knot by the ocean waves',
+    description: 'Sleek animated calendar reminder, Google Calendar sync, interactive location map, and couple story highlights.',
+    musicTitle: 'Ocean Breeze Acoustic Romance',
+    events: [
+      { id: '1', name: 'Beachside Destination Celebrations', date: '18-20 Feb 2027', time: 'All Day', venue: 'Private Beachfront Lawn', address: 'Cox\'s Bazar', dressCode: 'Resort Pastel & Tropical Chic' }
+    ]
+  },
+  {
+    id: 'vrindavan',
+    name: 'Botanical Harmony',
+    category: 'hindu',
+    categoryLabel: 'Wedding Invitation',
+    originalPrice: 5999,
+    discountPrice: 3999,
+    currency: '৳',
+    coverImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    accentColor: '#059669',
+    secondaryColor: '#ECFDF5',
+    aesthetic: 'Sage Green Botanical & Gold Leaf Border',
+    groomName: 'Abrar',
+    brideName: 'Mehnaz',
+    eventDate: '12 January 2027',
+    location: 'Le Méridien, Airport Road, Dhaka',
+    shlokaOrMantra: 'Celebrating love, family, and lifelong blessings together',
+    description: 'Crisp botanical foliage paired with embossed gold monograms, interactive guest messages, and venue navigation.',
+    musicTitle: 'Acoustic Guitar – Serenade in G Major',
+    events: [
+      { id: '1', name: 'Gaye Holud Festival', date: '10 Jan 2027', time: '05:30 PM', venue: 'Sky Ballroom', address: 'Le Méridien, Dhaka', dressCode: 'Floral Yellow & Green' },
+      { id: '2', name: 'Wedding Reception', date: '12 Jan 2027', time: '07:30 PM', venue: 'Grand Ballroom', address: 'Le Méridien, Dhaka', dressCode: 'Regal Formal' }
+    ]
+  }
+];

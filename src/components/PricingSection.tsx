@@ -1,0 +1,275 @@
+import React, { useState } from 'react';
+import { Sparkles, Check, ArrowRight } from 'lucide-react';
+
+interface PricingSectionProps {
+  onChoosePackage?: (packageName: string, price: string) => void;
+  onChooseTemplate?: () => void;
+  onOpenInquiry?: () => void;
+}
+
+export const PricingSection: React.FC<PricingSectionProps> = ({
+  onChoosePackage,
+  onChooseTemplate,
+  onOpenInquiry,
+}) => {
+  const currentPrices = {
+    symbol: '৳',
+    starter: '1,499',
+    memories: '2,999',
+    premium: '4,999',
+  };
+
+  const handleSelect = (tier: string, price: string) => {
+    if (onChoosePackage) {
+      onChoosePackage(tier, `${currentPrices.symbol}${price}`);
+    } else if (onChooseTemplate) {
+      onChooseTemplate();
+    }
+  };
+
+  return (
+    <section id="pricing-section" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FAF4EC] via-[#FDF2F7] to-[#F8EFF6] text-[#2D1D24] overflow-hidden border-t border-[#EAE0D5]">
+      {/* Ambient background particles & wish glow effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[400px] bg-gradient-to-r from-[#FF2A85]/15 via-[#F59E0B]/10 to-[#EC4899]/15 rounded-full blur-[100px]" />
+        <div className="absolute top-1/3 left-10 w-[350px] h-[350px] bg-rose-200/40 rounded-full blur-[90px]" />
+        <div className="absolute bottom-20 right-10 w-[380px] h-[380px] bg-amber-200/35 rounded-full blur-[90px]" />
+        
+        {/* Subtle twinkling celebration stars */}
+        <div className="absolute top-12 left-16 w-2 h-2 bg-[#FF2A85] rounded-full opacity-60 animate-pulse" />
+        <div className="absolute top-36 right-24 w-2 h-2 bg-amber-400 rounded-full opacity-60" />
+        <div className="absolute bottom-24 left-1/4 w-2 h-2 bg-pink-400 rounded-full opacity-50 animate-pulse" />
+        <div className="absolute top-1/2 right-12 w-2 h-2 bg-[#FF1375] rounded-full opacity-70" />
+        <div className="absolute bottom-40 right-1/3 w-2 h-2 bg-amber-500 rounded-full opacity-50" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto z-10">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-600/30 text-[#8C5D2E] text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase mb-4 font-display">
+            <span>✦</span>
+            <span>TRANSPARENT PRICING</span>
+            <span>✦</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#2B1724] leading-[1.15] mb-5 font-serif-luxury">
+            Choose the Experience That Fits<br />
+            <span className="font-bold text-[#831843]">Your Moment.</span>
+          </h2>
+          <p className="text-[#68535F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
+            Every creation is bespoke, crafted with immersive music, responsive 3D animations, and lifetime instant updates.
+          </p>
+
+          {/* BDT Badge */}
+          <div className="inline-flex items-center gap-1.5 mt-6 px-4 py-1.5 rounded-full bg-white/90 border border-[#E7D6DE] text-xs font-semibold text-[#831843] shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#FF1375]" />
+            <span>All pricing in Bangladeshi Taka (৳ BDT)</span>
+          </div>
+        </div>
+
+        {/* 3 Pricing Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch max-w-6xl mx-auto">
+          
+          {/* Card 1: Starter */}
+          <div className="relative rounded-[28px] bg-white/95 border border-[#E8D7E0] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:border-[#D49EBE] hover:shadow-[0_16px_40px_rgba(180,83,122,0.12)] group shadow-sm">
+            <div>
+              {/* Kicker */}
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#9D768B] mb-3 font-display">
+                STARTER
+              </p>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+                For Simple Surprises
+              </h3>
+
+              {/* Price */}
+              <div className="flex items-baseline gap-1.5 mb-6">
+                <span className="text-sm font-serif-luxury text-[#9D768B]">From</span>
+                <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#9A3412]">
+                  {currentPrices.symbol}{currentPrices.starter}
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-[#F0E4EB] mb-6" />
+
+              {/* Feature List */}
+              <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Personalized design</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Name &amp; custom message</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Photo gallery</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Background music player</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Private shareable link</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => handleSelect('Starter', currentPrices.starter)}
+              id="choose-starter-btn"
+              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-[#F3E2EC] text-[#831843] border border-[#E2CBD8] hover:border-[#D4AEC5] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs"
+            >
+              CHOOSE STARTER
+            </button>
+          </div>
+
+          {/* Card 2: Memories (MOST POPULAR - Highlighted) */}
+          <div className="relative rounded-[28px] bg-gradient-to-b from-[#FFF5F9] via-[#FFF0F6] to-[#FFEBF3] border-2 border-[#FF1375] p-7 sm:p-9 flex flex-col justify-between shadow-[0_12px_45px_rgba(255,19,117,0.2)] lg:-translate-y-3 transition-all duration-300 hover:shadow-[0_16px_55px_rgba(255,19,117,0.3)] group">
+            
+            {/* "MOST POPULAR" Floating Badge */}
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#FF1375] to-[#E00E65] text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(255,19,117,0.45)] whitespace-nowrap">
+              MOST POPULAR
+            </div>
+
+            <div>
+              {/* Kicker */}
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E00E65] mb-3 font-display">
+                MEMORIES
+              </p>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+                For Deeper Storytelling
+              </h3>
+
+              {/* Price */}
+              <div className="flex items-baseline gap-1.5 mb-6">
+                <span className="text-sm font-serif-luxury text-[#BE185D]">From</span>
+                <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#E00E65]">
+                  {currentPrices.symbol}{currentPrices.memories}
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-[#F5D0E1] mb-6" />
+
+              {/* Feature List */}
+              <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#4E3946]">
+                <li className="flex items-center gap-3 font-bold text-[#831843]">
+                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span>Everything in Starter</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span>Extended photo memories</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span>Personal letter chapter</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span>Interactive memory timeline</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span>Video support</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => handleSelect('Memories', currentPrices.memories)}
+              id="choose-memories-btn"
+              className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#FF1375] via-[#F43F5E] to-[#E00E65] hover:brightness-105 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_20px_rgba(255,19,117,0.4)] active:scale-95 cursor-pointer"
+            >
+              CHOOSE MEMORIES
+            </button>
+          </div>
+
+          {/* Card 3: Premium */}
+          <div className="relative rounded-[28px] bg-white/95 border border-[#E8D7E0] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:border-[#D49EBE] hover:shadow-[0_16px_40px_rgba(180,83,122,0.12)] group shadow-sm">
+            <div>
+              {/* Kicker */}
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#B45309] mb-3 font-display">
+                PREMIUM
+              </p>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+                Unforgettable Moments
+              </h3>
+
+              {/* Price */}
+              <div className="flex items-baseline gap-1.5 mb-6">
+                <span className="text-sm font-serif-luxury text-[#9D768B]">From</span>
+                <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#B45309]">
+                  {currentPrices.symbol}{currentPrices.premium}
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-[#F0E4EB] mb-6" />
+
+              {/* Feature List */}
+              <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Fully bespoke storyline</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Advanced interactive animations</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Photo + video memory chapters</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Custom reveal section</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span>Premium audio &amp; ending</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => handleSelect('Premium', currentPrices.premium)}
+              id="choose-premium-btn"
+              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-[#F3E2EC] text-[#831843] border border-[#E2CBD8] hover:border-[#D4AEC5] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs"
+            >
+              CHOOSE PREMIUM
+            </button>
+          </div>
+
+        </div>
+
+        {/* Bottom Guarantee Banner */}
+        <div className="mt-14 max-w-2xl mx-auto text-center p-4 rounded-2xl bg-white/90 border border-[#E7D6DE] text-xs text-[#68535F] flex flex-wrap items-center justify-center gap-4 sm:gap-8 shadow-xs">
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-600 font-bold">✓</span>
+            <span>24h Turnaround on WhatsApp</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-600 font-bold">✓</span>
+            <span>2 Free Rounds of Edits</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-amber-600 font-bold">✦</span>
+            <span>100% Satisfaction Guarantee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

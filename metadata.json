@@ -1,0 +1,7 @@
+{
+  "name": "wishora",
+  "description": "Digital invitations and celebration experiences for weddings, birthdays, proposals, and special moments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

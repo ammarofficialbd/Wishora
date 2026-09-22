@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+.font-serif-accent {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Perspective 3D showcase styling */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.perspective-hero {
+  perspective: 1400px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.hero-3d-plane {
+  /* 110 degree angle (tilted 20 degrees to the left from vertical) with 3D perspective */
+  transform: perspective(1400px) rotateX(15deg) rotateZ(-20deg) scale(1.08);
+  transform-origin: center center;
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-down {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-down 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down-slow {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-down 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down-fast {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-down 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-up 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-slow {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-up 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-fast {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-up 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down:hover,
+.animate-marquee-down-slow:hover,
+.animate-marquee-down-fast:hover,
+.animate-marquee-up:hover,
+.animate-marquee-up-slow:hover,
+.animate-marquee-up-fast:hover,
+.pause-on-hover:hover .animate-marquee-down,
+.pause-on-hover:hover .animate-marquee-down-slow,
+.pause-on-hover:hover .animate-marquee-down-fast,
+.pause-on-hover:hover .animate-marquee-up,
+.pause-on-hover:hover .animate-marquee-up-slow,
+.pause-on-hover:hover .animate-marquee-up-fast {
+  animation-play-state: paused;
+}
+
+.rotate-x-12 {
+  transform: rotateX(20deg) rotateZ(-6deg) scale(0.95);
+}
+
+.rotate-x-tilt {
+  transform: rotateX(25deg) rotateY(0deg) rotateZ(-8deg);
+}
+
+/* Custom shadow effects for luxury stationery cards and phone mockups */
+.shadow-luxury {
+  box-shadow: 0 20px 45px -15px rgba(28, 20, 16, 0.12), 0 0 0 1px rgba(28, 20, 16, 0.04);
+}
+
+.shadow-phone {
+  box-shadow: 0 25px 50px -12px rgba(25, 15, 10, 0.28), 0 0 0 1px rgba(212, 175, 55, 0.15);
+}
+
+.shadow-gold {
+  box-shadow: 0 12px 30px -6px rgba(197, 148, 58, 0.4);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 18px 40px -8px rgba(197, 148, 58, 0.45);
+}
+
+/* Smooth glass effect */
+.glass-panel {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
