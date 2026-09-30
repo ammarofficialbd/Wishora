@@ -58,12 +58,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           <p className="text-[#68535F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
             Every creation is bespoke, crafted with immersive music, responsive 3D animations, and lifetime instant updates.
           </p>
-
-          {/* BDT Badge */}
-          <div className="inline-flex items-center gap-1.5 mt-6 px-4 py-1.5 rounded-full bg-white/90 border border-[#E7D6DE] text-xs font-semibold text-[#831843] shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#FF1375]" />
-            <span>All pricing in Bangladeshi Taka (৳ BDT)</span>
-          </div>
         </div>
 
         {/* 3 Pricing Cards Grid */}

@@ -1,60 +1,31 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { CategoryType, TemplateItem } from '../types';
+import { TemplateItem } from '../types';
 import { TEMPLATES } from '../data/templates';
 
 interface TemplatesSectionProps {
   onSelectTemplate: (templateId: string) => void;
-  onOpenInquiry: () => void;
+  onOpenInquiry?: () => void;
 }
 
-const CATEGORIES: { id: CategoryType | 'something-else'; label: string; icon?: string }[] = [
-  { id: 'all', label: 'All' },
-  { id: 'hindu', label: 'Royal Weddings' },
-  { id: 'muslim', label: 'Nikah & Walima' },
-  { id: 'engagement', label: 'Engagement & Propose' },
-  { id: 'birthday', label: 'Birthday Celebration' },
-  { id: 'save-the-date', label: 'Save the Date' },
-  { id: 'something-else', label: 'Custom Design', icon: '✨' }
-];
-
 export const TemplatesSection: React.FC<TemplatesSectionProps> = ({
-  onSelectTemplate,
-  onOpenInquiry
+  onSelectTemplate
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<CategoryType | 'something-else'>('all');
-
-  // Featured 6 templates representing Weddings, Wedding Invitation, Birthday, Propose, Engagement, Save the date
+  // Featured 3 signature templates
   const featuredTemplateIds = [
     'rajwada-vivah',
     'vrindavan',
-    'golden-jubilee',
-    'celestial-ring',
-    'save-the-sunset',
-    'noor-zafar'
+    'golden-jubilee'
   ];
 
-  const filteredTemplates = useMemo(() => {
-    let list = TEMPLATES.filter(t => featuredTemplateIds.includes(t.id));
-    if (selectedCategory === 'all' || selectedCategory === 'something-else') {
-      return list;
-    }
-    const catFiltered = TEMPLATES.filter((t) => t.category === selectedCategory);
-    return catFiltered.length > 0 ? catFiltered : list;
-  }, [selectedCategory]);
-
-  const handleCategoryClick = (catId: CategoryType | 'something-else') => {
-    if (catId === 'something-else') {
-      onOpenInquiry();
-    } else {
-      setSelectedCategory(catId);
-    }
-  };
+  const templatesList = useMemo(() => {
+    return TEMPLATES.filter(t => featuredTemplateIds.includes(t.id));
+  }, []);
 
   return (
     <section id="templates-section" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10">
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-600/20 text-[#8C5D2E] text-[11px] font-bold tracking-widest uppercase mb-3 font-display">
           <span>✦</span>
           <span>MADE FOR EVERY MOMENT</span>
@@ -68,30 +39,9 @@ export const TemplatesSection: React.FC<TemplatesSectionProps> = ({
         </p>
       </div>
 
-      {/* Filter Tabs / Pills */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-5xl mx-auto mb-10 sm:mb-12">
-        {CATEGORIES.map((cat) => {
-          const isActive = selectedCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => handleCategoryClick(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-1.5 border ${
-                isActive
-                  ? 'bg-[#181210] text-[#F3D188] border-amber-500/40 shadow-sm'
-                  : 'bg-[#F2ECE2] hover:bg-[#EAE0D2] text-[#4A3C33] border-[#E5DACB]'
-              }`}
-            >
-              {cat.icon && <span>{cat.icon}</span>}
-              <span>{cat.label}</span>
-            </button>
-          );
-        })}
-      </div>
-
       {/* Templates 3-Column Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-        {filteredTemplates.map((template) => (
+        {templatesList.map((template) => (
           <div
             key={template.id}
             onClick={() => onSelectTemplate(template.id)}
