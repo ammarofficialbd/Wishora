@@ -95,7 +95,7 @@ export default function App() {
           onSelectTemplate={handleOpenLiveDemoById}
         />
 
-        {/* 3. The Royal Wedding Edit Section */}
+       /*  {/* 3. The Royal Wedding Edit Section 
         <ScrollReveal distance={40} duration={0.8}>
           <RoyalWeddingBanner
             onOpenDemo={() => handleOpenLiveDemoById('vrindavan')}
@@ -104,7 +104,7 @@ export default function App() {
               handleOpenCustomize(weddingTemplate);
             }}
           />
-        </ScrollReveal>
+        </ScrollReveal> 
 
         {/* 4. Templates Catalog Section */}
         <ScrollReveal distance={40} duration={0.8}>
