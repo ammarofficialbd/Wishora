@@ -48,6 +48,13 @@ class AudioController {
     } catch {}
   }
 
+  public playPopEffect() {
+    try {
+      this.initContext();
+      this.playTone(620, 'sine', 0.12, 0.18);
+    } catch {}
+  }
+
   public startCeremonialMusic(theme: string = 'flute') {
     this.stopMusic();
     this.isPlaying = true;

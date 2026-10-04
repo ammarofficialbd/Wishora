@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import birthdayGalaImg from '../assets/images/birthday_celebration_gala_1791092278497.jpg';
+import royalWeddingImg from '../assets/images/royal_wedding_invitation_1791092289863.jpg';
 
 interface HeroProps {
   onChooseTemplate: () => void;
@@ -26,16 +28,16 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
       subtitle: 'Royal Wedding',
       couple: 'Farhan & Samira',
       category: 'Wedding',
-      image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'
+      image: royalWeddingImg
     },
     {
       id: 'hero-2',
-      templateId: 'noor-zafar',
-      title: 'Noor-e-Zafar',
-      subtitle: 'Holy Nikah & Walima',
-      couple: 'Tanvir & Nusrat',
-      category: 'Nikah',
-      image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'
+      templateId: 'first-birthday-wonderland',
+      title: 'First Birthday Wonderland',
+      subtitle: 'Magical Celebration',
+      couple: 'Ayaan’s 1st Birthday',
+      category: 'Birthday',
+      image: '/assets/wishora-birth-template.jpg'
     }
   ];
 
@@ -43,12 +45,12 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
   const col2Cards: HeroCardItem[] = [
     {
       id: 'hero-3',
-      templateId: 'vrindavan',
-      title: 'Botanical Harmony',
-      subtitle: 'Sage Green Floral',
-      couple: 'Abrar & Mehnaz',
-      category: 'Wedding',
-      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'
+      templateId: 'golden-birthday-gala',
+      title: 'Golden Birthday Gala',
+      subtitle: 'Champagne Sparkle',
+      couple: 'Ahnaf’s Birthday Gala',
+      category: 'Birthday',
+      image: birthdayGalaImg
     },
     {
       id: 'hero-4',
@@ -65,21 +67,21 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
   const col3Cards: HeroCardItem[] = [
     {
       id: 'hero-5',
-      templateId: 'celestial-ring',
-      title: 'Celestial Proposal',
-      subtitle: 'Rose Gold & Diamond',
-      couple: 'Rayhan & Sadia',
-      category: 'Engagement',
-      image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80'
+      templateId: 'first-birthday-wonderland',
+      title: 'Ayaan’s 1st Birthday',
+      subtitle: 'Burgundy & Gold Balloons',
+      couple: 'Ayaan (1st Birthday)',
+      category: 'Birthday',
+      image: '/assets/wishora-birth-template.jpg'
     },
     {
       id: 'hero-6',
-      templateId: 'golden-jubilee',
-      title: 'Golden Jubilee Gala',
+      templateId: 'golden-birthday-gala',
+      title: 'Golden Birthday Gala',
       subtitle: 'Champagne Sparkle',
       couple: 'Ahnaf’s Birthday Bash',
       category: 'Birthday',
-      image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80'
+      image: birthdayGalaImg
     }
   ];
 
@@ -88,20 +90,20 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-7',
       templateId: 'rajwada-vivah',
-      title: 'Umaid Palace Vivah',
-      subtitle: 'Heritage Marwar',
-      couple: 'Kabir & Ananya',
-      category: 'Royal Vivah',
-      image: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80'
+      title: 'Royal Heritage Vivah',
+      subtitle: 'Regal Arch & Gold Foil',
+      couple: 'Farhan & Samira',
+      category: 'Royal Wedding',
+      image: royalWeddingImg
     },
     {
       id: 'hero-8',
-      templateId: 'vrindavan',
-      title: 'Vedic Vivaham',
-      subtitle: 'Temple Mandap',
-      couple: 'Karthik & Meenakshi',
-      category: 'Vivaham',
-      image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80'
+      templateId: 'first-birthday-wonderland',
+      title: 'First Birthday Wonderland',
+      subtitle: 'Magical Celebration',
+      couple: 'Ayaan’s 1st Birthday',
+      category: 'Birthday',
+      image: '/assets/wishora-birth-template.jpg'
     }
   ];
 
@@ -109,21 +111,21 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
   const col5Cards: HeroCardItem[] = [
     {
       id: 'hero-9',
-      templateId: 'noor-zafar',
-      title: 'Sufi Soul Romance',
-      subtitle: 'Grand Nikah',
-      couple: 'Omar & Malak',
-      category: 'Nikah',
-      image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80'
+      templateId: 'golden-birthday-gala',
+      title: 'Golden Birthday Gala',
+      subtitle: 'Luxury Celebration',
+      couple: 'Ahnaf & Family',
+      category: 'Birthday',
+      image: birthdayGalaImg
     },
     {
       id: 'hero-10',
-      templateId: 'celestial-ring',
-      title: 'Royal Reception',
-      subtitle: 'Sydney Cathedral',
-      couple: 'Sam & Sofia',
-      category: 'Reception',
-      image: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80'
+      templateId: 'rajwada-vivah',
+      title: 'Royal Heritage Vivah',
+      subtitle: 'Grand Wedding Reception',
+      couple: 'Farhan & Samira',
+      category: 'Wedding',
+      image: royalWeddingImg
     }
   ];
 
@@ -175,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 z-20 backdrop-blur-[2px]">
         <span className="px-4 py-2 rounded-full bg-white text-[#181210] font-bold text-xs sm:text-sm shadow-xl flex items-center gap-1.5 transform group-hover:scale-105 transition-transform">
           <span>Live Demo</span>
-          <ArrowUpRight className="w-4 h-4 text-[#FF1375]" />
+          <ArrowUpRight className="w-4 h-4 text-[#A81B5B]" />
         </span>
       </div>
     </div>
@@ -197,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-[#2B1724] tracking-tight leading-[1.14] mb-5 font-serif-luxury max-w-4xl mx-auto">
           Turn a Special Moment Into<br />
-          <span className="font-extrabold text-[#831843]">Something They’ll Never Forget.</span>
+          <span className="font-extrabold text-[#7A0C38]">Something They’ll Never Forget.</span>
         </h1>
 
         {/* Subtitle */}
@@ -210,7 +212,7 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
           <button
             onClick={onChooseTemplate}
             id="hero-choose-template-btn"
-            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 text-white text-base font-semibold border border-rose-300/40 hover:scale-105 active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(255,19,117,0.4)] hover:shadow-[0_16px_36px_-6px_rgba(255,19,117,0.55)] cursor-pointer flex items-center gap-2 group"
+            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-base font-semibold border border-rose-300/30 hover:scale-105 active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(122,12,56,0.4)] hover:shadow-[0_16px_36px_-6px_rgba(122,12,56,0.55)] cursor-pointer flex items-center gap-2 group"
           >
             <span>Choose a template</span>
             <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

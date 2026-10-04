@@ -47,7 +47,7 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
             </p>
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF1375] to-[#BE185D] text-white text-xs font-semibold hover:brightness-105 transition-all shadow-xs cursor-pointer"
+              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white text-xs font-semibold hover:brightness-110 transition-all shadow-xs cursor-pointer"
             >
               Close
             </button>
@@ -55,7 +55,7 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
         ) : (
           <div>
             <div className="flex items-center gap-2 text-[#8C5D2E] text-xs font-bold uppercase tracking-wider mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF1375]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#A81B5B]" />
               <span>Bespoke Design Service</span>
             </div>
             <h3 className="text-2xl font-serif-luxury font-bold text-[#2B1724] mb-2">
@@ -119,7 +119,7 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                className="w-full py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Submit Custom Request</span>

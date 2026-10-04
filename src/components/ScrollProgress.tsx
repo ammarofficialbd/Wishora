@@ -29,7 +29,7 @@ export const ScrollProgress: React.FC = () => {
       {/* Top Luxury Gradient Scroll Indicator */}
       <div className="fixed top-0 left-0 right-0 h-[3px] z-50 pointer-events-none bg-black/5">
         <motion.div
-          className="h-full bg-gradient-to-r from-[#FF1375] via-[#F59E0B] to-[#BE185D] origin-left shadow-[0_0_12px_rgba(255,19,117,0.6)]"
+          className="h-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] origin-left shadow-[0_0_12px_rgba(122,12,56,0.6)]"
           style={{ scaleX }}
         />
       </div>
@@ -44,7 +44,7 @@ export const ScrollProgress: React.FC = () => {
             : { opacity: 0, scale: 0.8, y: 20 }
         }
         transition={{ duration: 0.25 }}
-        className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/90 backdrop-blur-md text-[#2B1724] hover:text-[#FF1375] border border-[#E8DDCF] shadow-lg hover:shadow-xl hover:border-[#FF1375]/40 transition-all cursor-pointer group"
+        className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/90 backdrop-blur-md text-[#2B1724] hover:text-[#7A0C38] border border-[#E8DDCF] shadow-lg hover:shadow-xl hover:border-[#A81B5B]/40 transition-all cursor-pointer group"
         aria-label="Scroll back to top"
       >
         <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />

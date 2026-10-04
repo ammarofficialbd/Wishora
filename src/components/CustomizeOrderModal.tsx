@@ -110,7 +110,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               <div className="pt-4">
                 <button
                   onClick={onClose}
-                  className="px-8 py-3 rounded-full bg-gradient-to-r from-[#FF1375] to-[#BE185D] text-white font-semibold text-sm hover:brightness-105 transition-all shadow-xs"
+                  className="px-8 py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white font-semibold text-sm hover:brightness-110 transition-all shadow-xs"
                 >
                   Done
                 </button>
@@ -304,7 +304,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               <div className="pt-3">
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 active:scale-[0.99] text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
+                  className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 active:scale-[0.99] text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer border border-rose-300/30"
                 >
                   <Sparkles className="w-4 h-4 text-white" />
                   <span>Proceed with {selectedTemplate.name} — ৳{selectedTemplate.discountPrice}</span>

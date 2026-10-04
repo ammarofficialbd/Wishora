@@ -80,7 +80,7 @@ export const ReinventedSection: React.FC<ReinventedSectionProps> = ({ onChooseTe
             <button
               onClick={onChooseTemplate}
               id="reinvented-choose-template-btn"
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(255,19,117,0.35)] cursor-pointer inline-flex items-center gap-2"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(122,12,56,0.35)] cursor-pointer inline-flex items-center gap-2 border border-rose-300/30"
             >
               <span>Choose a template</span>
               <ArrowRight className="w-4 h-4 text-white" />

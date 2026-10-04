@@ -21,12 +21,12 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: '3',
-    names: 'Ahnaf & Rifa',
-    relation: '(Groom and bride • Sylhet)',
+    names: 'Samir & Taskin',
+    relation: "(Ayaan's 1st Birthday • Dhaka)",
     rating: 5,
-    quote: 'We wanted something that felt modern yet deeply personal, and wishora nailed it. The music, animation, and instant RSVP made event coordination effortless.',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
-    tag: 'Verified Couple'
+    quote: 'We created a magical 1st Birthday celebration page for Ayaan with music and interactive photo stories. Everyone who opened the link was completely in awe!',
+    image: '/assets/wishora-birth-template.jpg',
+    tag: 'Birthday Wish'
   },
   {
     id: '4',

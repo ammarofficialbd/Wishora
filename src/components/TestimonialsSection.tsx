@@ -26,7 +26,7 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.18] mb-4 font-serif-luxury">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.18] mb-4 font-serif-luxury">
           Don't Take Our Word for It.<br />
           <span className="italic font-serif-accent font-normal text-[#8C5D2E]">
             Here's What Real Couples Are Saying
@@ -34,15 +34,19 @@ export const TestimonialsSection: React.FC = () => {
         </h2>
 
         {/* Rating Pill */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E6DACB] shadow-xs text-xs sm:text-sm font-medium text-[#181210] mt-2">
-          <div className="flex items-center text-[#E5A93C] gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-3.5 h-3.5 fill-current" />
-            ))}
+        <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 px-4 py-2.5 sm:py-1.5 rounded-2xl sm:rounded-full bg-white border border-[#E6DACB] shadow-xs text-xs sm:text-sm font-medium text-[#181210] mt-2 max-w-full">
+          <div className="flex items-center gap-1.5">
+            <div className="flex items-center text-[#E5A93C] gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-current" />
+              ))}
+            </div>
+            <span className="font-bold text-[#181210]">4.9 / 5.0</span>
           </div>
-          <span className="font-bold text-[#181210]">4.9 / 5.0</span>
-          <span className="text-[#C8B8A6]">•</span>
-          <span className="text-[#6B5A50] font-normal">Over 300+ couples across Bangladesh & worldwide</span>
+          <span className="hidden sm:inline text-[#C8B8A6]">•</span>
+          <span className="text-[#6B5A50] font-normal text-center leading-relaxed">
+            Over 300+ couples across Bangladesh &amp; worldwide
+          </span>
         </div>
       </div>
 

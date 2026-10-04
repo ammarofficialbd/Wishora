@@ -1,30 +1,104 @@
 import { TemplateItem } from '../types';
+import birthdayGalaImg from '../assets/images/birthday_celebration_gala_1791092278497.jpg';
+import royalWeddingImg from '../assets/images/royal_wedding_invitation_1791092289863.jpg';
 
 export const TEMPLATES: TemplateItem[] = [
   {
-    id: 'rajwada-vivah',
-    name: 'Royal Heritage',
-    category: 'hindu',
-    categoryLabel: 'Royal Weddings',
-    originalPrice: 7500,
-    discountPrice: 4999,
+    id: 'first-birthday-wonderland',
+    name: 'First Birthday Wonderland',
+    category: 'birthday',
+    categoryLabel: 'Birthday Celebration',
+    originalPrice: 1499,
+    discountPrice: 799,
     currency: '৳',
-    tag: 'Popular',
-    coverImage: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80',
-    accentColor: '#B45309',
+    tag: 'Most Popular',
+    coverImage: '/assets/wishora-birth-template.jpg',
+    accentColor: '#831843',
+    secondaryColor: '#FBF4F1',
+    aesthetic: 'Burgundy Helium Balloon & Interactive Memories Story',
+    groomName: 'Ayaan',
+    brideName: '1st Birthday Gala',
+    eventDate: '14 November 2026',
+    location: 'Gulshan Club, Dhaka',
+    shlokaOrMantra: 'A small corner of the internet, made just for you',
+    description: 'Bespoke mobile celebration with wax-sealed letter, photo memories chapters, scratch card surprise, 5 blowable cake candles, and 3D wishes for the year ahead.',
+    musicTitle: 'Upbeat Celebration Swing & Ceremonial Flute',
+    events: [
+      { id: '1', name: 'Cake Cutting & Birthday Gala', date: '14 Nov 2026', time: '06:30 PM', venue: 'Grand Ballroom', address: 'Gulshan Club, Dhaka', dressCode: 'Smart Pastel & Party Chic' }
+    ]
+  },
+  {
+    id: 'golden-birthday-gala',
+    name: 'Golden Birthday Gala',
+    category: 'birthday',
+    categoryLabel: 'Birthday Celebration',
+    originalPrice: 1299,
+    discountPrice: 699,
+    currency: '৳',
+    tag: 'Trending',
+    coverImage: birthdayGalaImg,
+    accentColor: '#9D174D',
+    secondaryColor: '#FDF2F8',
+    aesthetic: 'Champagne Gold Sparkle & Confetti Poppers',
+    groomName: 'Ahnaf',
+    brideName: 'Celebration Night',
+    eventDate: '25 November 2026',
+    location: 'The Westin, Gulshan, Dhaka',
+    shlokaOrMantra: 'Cheers to another year of great memories, love, and laughter!',
+    description: 'Interactive luxury birthday experience featuring celebratory soundtrack, custom gift reveal, and interactive wishes wall.',
+    musicTitle: 'Acoustic Joy – Celebration Swing',
+    events: [
+      { id: '1', name: 'Birthday Bash & Dinner', date: '25 Nov 2026', time: '07:30 PM', venue: 'Grand Pavilion Ballroom', address: 'The Westin Dhaka', dressCode: 'Smart Casual & Party Chic' }
+    ]
+  },
+  {
+    id: 'rajwada-vivah',
+    name: 'Royal Heritage Vivah',
+    category: 'hindu',
+    categoryLabel: 'Royal Wedding Invitation',
+    originalPrice: 3499,
+    discountPrice: 1999,
+    currency: '৳',
+    tag: 'Royal Signature',
+    coverImage: royalWeddingImg,
+    accentColor: '#7A0C38',
     secondaryColor: '#FFFBEB',
-    aesthetic: 'Golden Foil Arch & Royal Palace Aesthetic',
+    aesthetic: 'Regal Arch & Gold Foil Filigree',
     groomName: 'Farhan',
     brideName: 'Samira',
     eventDate: '18 December 2026',
     location: 'Radisson Blu Water Garden, Dhaka',
     shlokaOrMantra: 'Two souls, one heartfelt journey under the golden stars',
-    description: 'Enchanting floral vines with warm golden arch motifs, ambient celebratory background melody, and interactive RSVP.',
-    musicTitle: 'Serenade of Elegance – Acoustic Sitar & Violin',
+    description: 'Enchanting floral vines with warm golden arch motifs, ambient ceremonial melody, itinerary timeline, and instant RSVP.',
+    musicTitle: 'Serenade of Elegance – Acoustic Sitar & Flute',
     events: [
       { id: '1', name: 'Gaye Holud & Mehendi Night', date: '16 Dec 2026', time: '06:00 PM', venue: 'Utshab Banquet Hall', address: 'Radisson Blu, Dhaka', dressCode: 'Bright Yellow & Floral Pastel' },
       { id: '2', name: 'Sangeet & Musical Evening', date: '17 Dec 2026', time: '07:30 PM', venue: 'Grand Ballroom', address: 'Dhaka', dressCode: 'Glamorous Evening Elegance' },
       { id: '3', name: 'Grand Wedding & Reception', date: '18 Dec 2026', time: '07:00 PM', venue: 'Royal Pavilion Courtyard', address: 'Airport Road, Dhaka', dressCode: 'Regal Traditional Silk & Velvet' }
+    ]
+  },
+  {
+    id: 'golden-jubilee',
+    name: 'Golden Jubilee Gala',
+    category: 'birthday',
+    categoryLabel: 'Birthday Celebration',
+    originalPrice: 1499,
+    discountPrice: 799,
+    currency: '৳',
+    tag: 'Popular',
+    coverImage: '/assets/wishora-birth-template.jpg',
+    accentColor: '#831843',
+    secondaryColor: '#FBF4F1',
+    aesthetic: 'Champagne Gold Sparkle & Confetti Poppers',
+    groomName: 'Ayaan',
+    brideName: 'Birthday Gala',
+    eventDate: '14 November 2026',
+    location: 'Gulshan Club, Dhaka',
+    shlokaOrMantra: 'Cheers to another year of great memories, love, and laughter!',
+    description: 'Dynamic interactive confetti popping, guest birthday wishes wall, countdown timer, and venue directions.',
+    musicTitle: 'Upbeat Celebration Swing',
+    events: [
+      { id: '1', name: 'Birthday Bash & Dinner', date: '14 Nov 2026', time: '07:30 PM', venue: 'Grand Pavilion Ballroom', address: 'Gulshan Club, Dhaka', dressCode: 'Smart Casual & Party Chic' }
     ]
   },
   {
@@ -75,52 +149,6 @@ export const TEMPLATES: TemplateItem[] = [
     musicTitle: 'Piano Melody – A Thousand Years',
     events: [
       { id: '1', name: 'Ring Exchange & Cocktails', date: '14 Feb 2027', time: '07:00 PM', venue: 'Rooftop Infinity Terrace', address: 'InterContinental, Dhaka', dressCode: 'Smart Formal & Gowns' }
-    ]
-  },
-  {
-    id: 'golden-jubilee',
-    name: 'Golden Jubilee Gala',
-    category: 'birthday',
-    categoryLabel: 'Birthday Celebration',
-    originalPrice: 2999,
-    discountPrice: 1999,
-    currency: '৳',
-    coverImage: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80',
-    accentColor: '#D97706',
-    secondaryColor: '#FEF3C7',
-    aesthetic: 'Champagne Gold Sparkle & Confetti Poppers',
-    groomName: 'Ahnaf',
-    brideName: 'Birthday Gala',
-    eventDate: '25 November 2026',
-    location: 'The Westin, Gulshan, Dhaka',
-    shlokaOrMantra: 'Cheers to another year of great memories, love, and laughter!',
-    description: 'Dynamic interactive confetti popping, guest birthday wishes wall, countdown timer, and venue directions.',
-    musicTitle: 'Upbeat Celebration Swing',
-    events: [
-      { id: '1', name: 'Birthday Bash & Dinner', date: '25 Nov 2026', time: '07:30 PM', venue: 'Grand Pavilion Ballroom', address: 'The Westin Dhaka', dressCode: 'Smart Casual & Party Chic' }
-    ]
-  },
-  {
-    id: 'save-the-sunset',
-    name: 'Sunset Save The Date',
-    category: 'save-the-date',
-    categoryLabel: 'Save the Date',
-    originalPrice: 2499,
-    discountPrice: 1499,
-    currency: '৳',
-    coverImage: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80',
-    accentColor: '#E11D48',
-    secondaryColor: '#FFF1F2',
-    aesthetic: 'Golden Hour Beach Romance & Calendar Sync',
-    groomName: 'Zayan',
-    brideName: 'Ayla',
-    eventDate: '18-20 February 2027',
-    location: 'Sea Pearl Beach Resort, Cox\'s Bazar',
-    shlokaOrMantra: 'Save our date as we tie the knot by the ocean waves',
-    description: 'Sleek animated calendar reminder, Google Calendar sync, interactive location map, and couple story highlights.',
-    musicTitle: 'Ocean Breeze Acoustic Romance',
-    events: [
-      { id: '1', name: 'Beachside Destination Celebrations', date: '18-20 Feb 2027', time: 'All Day', venue: 'Private Beachfront Lawn', address: 'Cox\'s Bazar', dressCode: 'Resort Pastel & Tropical Chic' }
     ]
   },
   {

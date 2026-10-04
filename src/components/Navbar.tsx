@@ -18,18 +18,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 group cursor-pointer"
+          className="flex items-center group cursor-pointer"
           id="nav-logo"
+          aria-label="Wishora"
         >
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-[#FF1375] via-[#E11D48] to-amber-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7a2 2 0 012-2h14a2 2 0 012 2" />
-            </svg>
-          </div>
-          <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#2B1724] font-display flex items-center gap-1">
-            wishora
-            <span className="text-[#FF1375] text-xs">✦</span>
-          </span>
+          <img 
+            src="/assets/wishora.png" 
+            alt="wishora" 
+            className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
         </a>
 
         {/* Right side CTA & Menu Icon */}
@@ -38,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
           <button
             onClick={onChooseTemplate}
             id="nav-choose-template-btn"
-            className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 text-white text-sm font-semibold active:scale-95 transition-all shadow-xs cursor-pointer whitespace-nowrap"
+            className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_4px_16px_rgba(122,12,56,0.25)] cursor-pointer whitespace-nowrap border border-rose-200/20"
           >
             Choose a template
           </button>

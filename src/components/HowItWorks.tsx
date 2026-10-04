@@ -35,13 +35,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
                 <p className="text-[7px] text-amber-800 font-cinzel">ROYAL VIVAH</p>
                 <p className="text-[9px] font-serif-luxury font-bold text-neutral-900 mt-0.5">Kabir &amp; Rhea</p>
               </div>
-              <div className="text-[7px] text-center bg-gradient-to-r from-[#FF1375] to-[#BE185D] text-white rounded-md py-0.5 font-semibold">
+              <div className="text-[7px] text-center bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white rounded-md py-0.5 font-semibold">
                 Preview
               </div>
             </div>
 
             {/* Checkmark Badge */}
-            <div className="absolute bottom-3 right-5 w-7 h-7 rounded-full bg-gradient-to-r from-[#FF1375] to-[#BE185D] text-white border border-rose-300 flex items-center justify-center shadow-md">
+            <div className="absolute bottom-3 right-5 w-7 h-7 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white border border-rose-300/40 flex items-center justify-center shadow-md">
               <Check className="w-4 h-4" />
             </div>
           </div>
@@ -130,7 +130,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
         <button
           onClick={onChooseTemplate}
           id="how-it-works-choose-template-btn"
-          className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 text-white text-sm font-semibold active:scale-95 transition-all shadow-md cursor-pointer"
+          className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(122,12,56,0.35)] cursor-pointer border border-rose-300/30"
         >
           Choose a template
         </button>

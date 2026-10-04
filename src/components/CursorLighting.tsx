@@ -102,22 +102,22 @@ export const CursorLighting: React.FC = () => {
 
       {/* 3. Subtle Luxury Micro Ring / Lens Accent */}
       <motion.div
-        className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#FF1375]/30 transition-all duration-150"
+        className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#A81B5B]/30 transition-all duration-150"
         style={{
           left: dotX,
           top: dotY,
           width: isHoveringInteractive ? 38 : (isMouseDown ? 18 : 26),
           height: isHoveringInteractive ? 38 : (isMouseDown ? 18 : 26),
-          backgroundColor: isHoveringInteractive ? 'rgba(255, 19, 117, 0.05)' : 'transparent',
+          backgroundColor: isHoveringInteractive ? 'rgba(168, 27, 91, 0.05)' : 'transparent',
           boxShadow: isHoveringInteractive 
-            ? '0 0 16px rgba(255, 19, 117, 0.3), inset 0 0 8px rgba(245, 158, 11, 0.2)' 
+            ? '0 0 16px rgba(168, 27, 91, 0.3), inset 0 0 8px rgba(245, 158, 11, 0.2)' 
             : '0 0 8px rgba(245, 158, 11, 0.2)',
         }}
       />
 
       {/* 4. Center Gold Sparkle Core */}
       <motion.div
-        className="absolute -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#FF1375] to-amber-500 shadow-[0_0_8px_#FF1375]"
+        className="absolute -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] shadow-[0_0_8px_#A81B5B]"
         style={{
           left: dotX,
           top: dotY,

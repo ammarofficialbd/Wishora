@@ -14,9 +14,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 }) => {
   const currentPrices = {
     symbol: '৳',
-    starter: '1,499',
-    memories: '2,999',
-    premium: '4,999',
+    starter: '499',
+    memories: '699',
+    premium: '999',
   };
 
   const handleSelect = (tier: string, price: string) => {
@@ -72,7 +72,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               </p>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+              <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
                 For Simple Surprises
               </h3>
 
@@ -90,23 +90,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Feature List */}
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Personalized design</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Name &amp; custom message</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Photo gallery</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Background music player</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Private shareable link</span>
                 </li>
               </ul>
@@ -123,55 +123,55 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           </div>
 
           {/* Card 2: Memories (MOST POPULAR - Highlighted) */}
-          <div className="relative rounded-[28px] bg-gradient-to-b from-[#FFF5F9] via-[#FFF0F6] to-[#FFEBF3] border-2 border-[#FF1375] p-7 sm:p-9 flex flex-col justify-between shadow-[0_12px_45px_rgba(255,19,117,0.2)] lg:-translate-y-3 transition-all duration-300 hover:shadow-[0_16px_55px_rgba(255,19,117,0.3)] group">
+          <div className="relative rounded-[28px] bg-gradient-to-b from-[#FAF0F4] via-[#FDF5F8] to-[#FFF9FB] border-2 border-[#A81B5B] p-7 sm:p-9 flex flex-col justify-between shadow-[0_12px_45px_rgba(122,12,56,0.15)] lg:-translate-y-3 transition-all duration-300 hover:shadow-[0_16px_55px_rgba(122,12,56,0.25)] group">
             
             {/* "MOST POPULAR" Floating Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#FF1375] to-[#E00E65] text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(255,19,117,0.45)] whitespace-nowrap">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(122,12,56,0.35)] whitespace-nowrap">
               MOST POPULAR
             </div>
 
             <div>
               {/* Kicker */}
-              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E00E65] mb-3 font-display">
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#7A0C38] mb-3 font-display">
                 MEMORIES
               </p>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+              <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
                 For Deeper Storytelling
               </h3>
 
               {/* Price */}
               <div className="flex items-baseline gap-1.5 mb-6">
-                <span className="text-sm font-serif-luxury text-[#BE185D]">From</span>
-                <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#E00E65]">
+                <span className="text-sm font-serif-luxury text-[#7A0C38]">From</span>
+                <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#7A0C38]">
                   {currentPrices.symbol}{currentPrices.memories}
                 </span>
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-[#F5D0E1] mb-6" />
+              <div className="w-full h-px bg-[#F0D5E1] mb-6" />
 
               {/* Feature List */}
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#4E3946]">
-                <li className="flex items-center gap-3 font-bold text-[#831843]">
-                  <span className="text-[#FF1375] text-xs">✦</span>
+                <li className="flex items-center gap-3 font-bold text-[#7A0C38]">
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Everything in Starter</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Extended photo memories</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Personal letter chapter</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Interactive memory timeline</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF1375] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Video support</span>
                 </li>
               </ul>
@@ -181,7 +181,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             <button
               onClick={() => handleSelect('Memories', currentPrices.memories)}
               id="choose-memories-btn"
-              className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#FF1375] via-[#F43F5E] to-[#E00E65] hover:brightness-105 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_20px_rgba(255,19,117,0.4)] active:scale-95 cursor-pointer"
+              className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_20px_rgba(122,12,56,0.35)] active:scale-95 cursor-pointer"
             >
               CHOOSE MEMORIES
             </button>
@@ -196,7 +196,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               </p>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-serif-luxury text-[#2B1724] mb-4 leading-snug">
+              <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
                 Unforgettable Moments
               </h3>
 
@@ -214,23 +214,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Feature List */}
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Fully bespoke storyline</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Advanced interactive animations</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Photo + video memory chapters</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Custom reveal section</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-[#FF2A85] text-xs">✦</span>
+                  <span className="text-[#A81B5B] text-xs">✦</span>
                   <span>Premium audio &amp; ending</span>
                 </li>
               </ul>

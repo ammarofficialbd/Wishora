@@ -17,6 +17,7 @@ import { FullscreenMenuModal } from './components/FullscreenMenuModal';
 import { CursorLighting } from './components/CursorLighting';
 import { ScrollProgress } from './components/ScrollProgress';
 import { ScrollReveal } from './components/ScrollReveal';
+import { FloatingHearts } from './components/FloatingHearts';
 import { TEMPLATES } from './data/templates';
 import { TemplateItem } from './types';
 
@@ -75,6 +76,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-[#1c1b1f] flex flex-col font-sans selection:bg-[#f2dfc7] selection:text-[#382210] relative">
+      {/* Background Floating Love Hearts (Rising Water Bubble Style) */}
+      <FloatingHearts />
+
       {/* Premium Cursor Lighting Glow Spotlight */}
       <CursorLighting />
 
@@ -95,7 +99,8 @@ export default function App() {
           onSelectTemplate={handleOpenLiveDemoById}
         />
 
-       /*  {/* 3. The Royal Wedding Edit Section 
+        {/* 3. The Royal Wedding Edit Section (Commented out by user) */}
+        {/*
         <ScrollReveal distance={40} duration={0.8}>
           <RoyalWeddingBanner
             onOpenDemo={() => handleOpenLiveDemoById('vrindavan')}
@@ -104,7 +109,8 @@ export default function App() {
               handleOpenCustomize(weddingTemplate);
             }}
           />
-        </ScrollReveal> 
+        </ScrollReveal>
+        */}
 
         {/* 4. Templates Catalog Section */}
         <ScrollReveal distance={40} duration={0.8}>
