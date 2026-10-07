@@ -1,5 +1,6 @@
 import React from 'react';
-import { Check, Edit3, MessageCircle } from 'lucide-react';
+import { Check, Edit3, MessageCircle, Sparkles, Heart } from 'lucide-react';
+import romanticProposalImg from '../assets/images/romantic_proposal_invite_1791303320088.jpg';
 
 interface HowItWorksProps {
   onChooseTemplate: () => void;
@@ -13,9 +14,8 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
         <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-600/20 text-[#8C5D2E] text-[11px] font-bold tracking-widest uppercase mb-3 font-display">
           <span>EFFORTLESS PROCESS</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.18] mb-4 font-serif-luxury">
-          Your Dream Invite, Made For You in<br />
-          Minutes
+        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] text-center mb-4 font-serif-luxury">
+          Your Dream Invite,<br className="hidden sm:inline" /> Made For You in Minutes
         </h2>
         <p className="text-[#4D3F38] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
           Pick a design, tell us your details, and we craft your personalized invite. Beautiful, effortless and entirely yours.
@@ -24,25 +24,45 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
 
       {/* 3 Step Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
-        {/* Step 1: Choose a template */}
-        <div className="flex flex-col items-center text-center p-6 rounded-3xl bg-white border border-[#EAE3D6] shadow-sm hover:shadow-md hover:border-amber-400/50 transition-all">
+        {/* Step 1: Choose a template (Proposal Theme) */}
+        <div className="flex flex-col items-center text-center p-6 rounded-3xl bg-white border border-[#EAE3D6] shadow-sm hover:shadow-md hover:border-rose-400/50 transition-all">
           {/* Visual Canvas */}
-          <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#F7F2EB] to-[#EFE7DC] p-3 flex items-center justify-center mb-6 relative overflow-hidden border border-[#EAE3D6]/70">
-            {/* Mini phone frame browsing templates */}
-            <div className="w-32 h-44 bg-white rounded-2xl shadow-lg border-2 border-stone-300 p-2 flex flex-col justify-between transform -rotate-3">
-              <div className="w-8 h-1.5 bg-stone-300 rounded-full mx-auto" />
-              <div className="p-1.5 rounded-xl bg-amber-50 border border-amber-200 text-center">
-                <p className="text-[7px] text-amber-800 font-cinzel">ROYAL VIVAH</p>
-                <p className="text-[9px] font-serif-luxury font-bold text-neutral-900 mt-0.5">Kabir &amp; Rhea</p>
+          <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#FAF0F4] to-[#F5E2EC] p-2.5 sm:p-3 flex items-center justify-center mb-6 relative overflow-hidden border border-[#EAD5E2] group">
+            {/* Real Proposal Template Image Card Preview */}
+            <div className="relative w-[78%] sm:w-[82%] max-w-[240px] rounded-2xl bg-white shadow-xl border-2 border-rose-200/90 overflow-hidden transform -rotate-1 group-hover:rotate-0 transition-transform duration-300">
+              {/* Proposal Image Banner */}
+              <div className="relative h-28 sm:h-36 w-full overflow-hidden bg-stone-900">
+                <img 
+                  src={romanticProposalImg} 
+                  alt="Romantic Proposal Template Preview" 
+                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                />
+                <div className="absolute top-2 left-2 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-xs text-[8px] sm:text-[9px] text-rose-200 font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm border border-rose-300/30">
+                  <Heart className="w-2.5 h-2.5 text-[#ff3d6e] fill-[#ff3d6e]" />
+                  <span>Romantic Proposal</span>
+                </div>
+                <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-white/95 text-[9px] sm:text-[10px] text-[#7A0C38] font-bold shadow-xs">
+                  ৳699
+                </div>
               </div>
-              <div className="text-[7px] text-center bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white rounded-md py-0.5 font-semibold">
-                Preview
+
+              {/* Template Card Info */}
+              <div className="p-2.5 sm:p-3 bg-white text-left">
+                <p className="text-[11px] sm:text-xs font-serif-luxury font-bold text-[#2B1724] leading-tight truncate">
+                  "Will You Marry Me?" 💍
+                </p>
+                <div className="flex items-center justify-between mt-1">
+                  <span className="text-[9px] sm:text-[10px] text-[#7A685D]">Proposal Story</span>
+                  <span className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white font-semibold shadow-2xs">
+                    Selected ✓
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Checkmark Badge */}
-            <div className="absolute bottom-3 right-5 w-7 h-7 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white border border-rose-300/40 flex items-center justify-center shadow-md">
-              <Check className="w-4 h-4" />
+            <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-8 h-8 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white border-2 border-white flex items-center justify-center shadow-lg z-10">
+              <Check className="w-4 h-4 stroke-[2.5]" />
             </div>
           </div>
 

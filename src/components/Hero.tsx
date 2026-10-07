@@ -46,9 +46,9 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-3',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Gala',
-      subtitle: 'Champagne Sparkle',
-      couple: 'Ahnaf’s Birthday Gala',
+      title: 'Golden Birthday Surprise',
+      subtitle: 'Surprise Countdown',
+      couple: 'Ahnaf’s Birthday Surprise',
       category: 'Birthday',
       image: birthdayGalaImg
     },
@@ -77,9 +77,9 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-6',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Gala',
-      subtitle: 'Champagne Sparkle',
-      couple: 'Ahnaf’s Birthday Bash',
+      title: 'Golden Birthday Surprise',
+      subtitle: 'Surprise Countdown',
+      couple: 'Ahnaf’s Birthday Surprise',
       category: 'Birthday',
       image: birthdayGalaImg
     }
@@ -112,8 +112,8 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-9',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Gala',
-      subtitle: 'Luxury Celebration',
+      title: 'Golden Birthday Surprise',
+      subtitle: 'Balloons & Cake Cutting',
       couple: 'Ahnaf & Family',
       category: 'Birthday',
       image: birthdayGalaImg
@@ -197,9 +197,9 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-[#2B1724] tracking-tight leading-[1.14] mb-5 font-serif-luxury max-w-4xl mx-auto">
+        <h1 className="text-[30px] sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-[#2B1724] tracking-tight leading-[38px] sm:leading-[1.14] mb-5 font-serif-luxury max-w-4xl mx-auto">
           Turn a Special Moment Into<br />
-          <span className="font-extrabold text-[#7A0C38]">Something They’ll Never Forget.</span>
+          <span className="font-bold text-[#7A0C38]">Something They’ll Never Forget.</span>
         </h1>
 
         {/* Subtitle */}

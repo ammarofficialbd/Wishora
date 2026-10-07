@@ -1,6 +1,7 @@
 import { TemplateItem } from '../types';
 import birthdayGalaImg from '../assets/images/birthday_celebration_gala_1791092278497.jpg';
 import royalWeddingImg from '../assets/images/royal_wedding_invitation_1791092289863.jpg';
+import proposalCardImg from '../assets/images/secret_proposal_card_1791303789300.jpg';
 
 export const TEMPLATES: TemplateItem[] = [
   {
@@ -29,52 +30,50 @@ export const TEMPLATES: TemplateItem[] = [
   },
   {
     id: 'golden-birthday-gala',
-    name: 'Golden Birthday Gala',
+    name: 'Golden Birthday Surprise',
     category: 'birthday',
-    categoryLabel: 'Birthday Celebration',
+    categoryLabel: 'Birthday Celebration · Live Surprise',
     originalPrice: 1299,
     discountPrice: 699,
     currency: '৳',
-    tag: 'Trending',
+    tag: 'Trending Surprise',
     coverImage: birthdayGalaImg,
     accentColor: '#9D174D',
-    secondaryColor: '#FDF2F8',
-    aesthetic: 'Champagne Gold Sparkle & Confetti Poppers',
+    secondaryColor: '#2A0610',
+    aesthetic: 'Surprise Countdown · Balloons Pop & Cake Cutting',
     groomName: 'Ahnaf',
-    brideName: 'Celebration Night',
+    brideName: 'Birthday Surprise',
     eventDate: '25 November 2026',
     location: 'The Westin, Gulshan, Dhaka',
-    shlokaOrMantra: 'Cheers to another year of great memories, love, and laughter!',
-    description: 'Interactive luxury birthday experience featuring celebratory soundtrack, custom gift reveal, and interactive wishes wall.',
-    musicTitle: 'Acoustic Joy – Celebration Swing',
+    shlokaOrMantra: 'A celebration, just for you. Another year of you, and the world is better for it.',
+    description: 'Bespoke birthday surprise with 30s countdown, 10 pop-the-balloon kind messages, interactive 3D cake cutting & candle blow, photo memories gallery, heartfelt typewriter letter, 6 flip wish surprises, and grand celebration finale.',
+    musicTitle: 'Celebration Joy – Acoustic Flute & Swing',
     events: [
       { id: '1', name: 'Birthday Bash & Dinner', date: '25 Nov 2026', time: '07:30 PM', venue: 'Grand Pavilion Ballroom', address: 'The Westin Dhaka', dressCode: 'Smart Casual & Party Chic' }
     ]
   },
   {
     id: 'rajwada-vivah',
-    name: 'Royal Heritage Vivah',
-    category: 'hindu',
-    categoryLabel: 'Royal Wedding Invitation',
-    originalPrice: 3499,
-    discountPrice: 1999,
+    name: 'Romantic Proposal & Love Story',
+    category: 'engagement',
+    categoryLabel: 'Romantic Proposal · Love Story',
+    originalPrice: 1499,
+    discountPrice: 799,
     currency: '৳',
-    tag: 'Royal Signature',
-    coverImage: royalWeddingImg,
-    accentColor: '#7A0C38',
-    secondaryColor: '#FFFBEB',
-    aesthetic: 'Regal Arch & Gold Foil Filigree',
-    groomName: 'Farhan',
-    brideName: 'Samira',
-    eventDate: '18 December 2026',
-    location: 'Radisson Blu Water Garden, Dhaka',
-    shlokaOrMantra: 'Two souls, one heartfelt journey under the golden stars',
-    description: 'Enchanting floral vines with warm golden arch motifs, ambient ceremonial melody, itinerary timeline, and instant RSVP.',
-    musicTitle: 'Serenade of Elegance – Acoustic Sitar & Flute',
+    tag: 'Trending Proposal',
+    coverImage: proposalCardImg,
+    accentColor: '#BE185D',
+    secondaryColor: '#FFF1F2',
+    aesthetic: 'Twilight Fairy Lights · Ring Reveal & Our Story',
+    groomName: 'Kabir',
+    brideName: 'Ananya',
+    eventDate: '14 February 2027',
+    location: 'Rooftop Terrace, Gulshan, Dhaka',
+    shlokaOrMantra: 'She said YES! The beginning of our forever story',
+    description: 'Bespoke romantic proposal webpage with countdown, 10 moments that made me fall for you, interactive ring reveal, photo timeline, and typewriter love letter.',
+    musicTitle: 'Romantic Acoustic Piano & Soft Cello Melody',
     events: [
-      { id: '1', name: 'Gaye Holud & Mehendi Night', date: '16 Dec 2026', time: '06:00 PM', venue: 'Utshab Banquet Hall', address: 'Radisson Blu, Dhaka', dressCode: 'Bright Yellow & Floral Pastel' },
-      { id: '2', name: 'Sangeet & Musical Evening', date: '17 Dec 2026', time: '07:30 PM', venue: 'Grand Ballroom', address: 'Dhaka', dressCode: 'Glamorous Evening Elegance' },
-      { id: '3', name: 'Grand Wedding & Reception', date: '18 Dec 2026', time: '07:00 PM', venue: 'Royal Pavilion Courtyard', address: 'Airport Road, Dhaka', dressCode: 'Regal Traditional Silk & Velvet' }
+      { id: '1', name: 'Rooftop Proposal & Dinner', date: '14 Feb 2027', time: '07:30 PM', venue: 'Private Sky Pavilion', address: 'Gulshan 2, Dhaka', dressCode: 'Smart Romantic & Cocktail' }
     ]
   },
   {

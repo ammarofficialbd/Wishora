@@ -81,3 +81,34 @@ export interface OrderFormData {
   includeMusic: boolean;
   includeMap: boolean;
 }
+
+export type BlogCategory = 'all' | 'wedding' | 'birthday' | 'guide' | 'inspiration';
+
+export interface BlogArticleSection {
+  heading?: string;
+  paragraphs: string[];
+  tips?: string[];
+  quote?: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  titleBn?: string;
+  excerpt: string;
+  category: BlogCategory;
+  categoryLabel: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  publishedAt: string;
+  readTime: string;
+  coverImage: string;
+  tags: string[];
+  featured?: boolean;
+  relatedTemplateId?: string;
+  sections: BlogArticleSection[];
+}

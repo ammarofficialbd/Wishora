@@ -9,6 +9,7 @@ import { HowItWorks } from './components/HowItWorks';
 import { PricingSection } from './components/PricingSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
+// import { BlogSection } from './components/BlogSection';
 import { Footer } from './components/Footer';
 import { LiveInviteModal } from './components/LiveInviteModal';
 import { CustomizeOrderModal } from './components/CustomizeOrderModal';
@@ -18,6 +19,7 @@ import { CursorLighting } from './components/CursorLighting';
 import { ScrollProgress } from './components/ScrollProgress';
 import { ScrollReveal } from './components/ScrollReveal';
 import { FloatingHearts } from './components/FloatingHearts';
+import { BirthdaySurpriseTemplate } from './components/BirthdaySurpriseTemplate';
 import { TEMPLATES } from './data/templates';
 import { TemplateItem } from './types';
 
@@ -28,6 +30,37 @@ export default function App() {
   const [templateForCustomization, setTemplateForCustomization] = useState<TemplateItem | null>(null);
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
+
+  // Check URL route for standalone template demo (e.g. /template/birthday01 or ?template=birthday01)
+  const checkIsBirthdayDemoRoute = () => {
+    if (typeof window === 'undefined') return false;
+    const path = window.location.pathname.toLowerCase();
+    const search = window.location.search.toLowerCase();
+    const hash = window.location.hash.toLowerCase();
+    return (
+      path.includes('birthday01') || 
+      path.includes('birtday01') || 
+      search.includes('birthday01') || 
+      search.includes('birtday01') ||
+      hash.includes('birthday01') ||
+      hash.includes('birtday01')
+    );
+  };
+
+  const [isStandaloneBirthdayDemo, setIsStandaloneBirthdayDemo] = useState(checkIsBirthdayDemoRoute);
+
+  useEffect(() => {
+    const handleUrlChange = () => {
+      setIsStandaloneBirthdayDemo(checkIsBirthdayDemoRoute());
+    };
+
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
+  }, []);
 
   // Initialize Lenis for Butter-smooth Momentum Inertia Scrolling
   useEffect(() => {
@@ -73,6 +106,33 @@ export default function App() {
       handleOpenCustomize();
     }
   };
+
+  if (isStandaloneBirthdayDemo) {
+    const goldenTemplate = TEMPLATES.find((t) => t.id === 'golden-birthday-gala') || TEMPLATES[1];
+    return (
+      <div className="min-h-screen bg-[#2a0610]">
+        <BirthdaySurpriseTemplate
+          name={goldenTemplate.groomName || 'Ahnaf'}
+          isEmbedded={false}
+          onClose={() => {
+            window.history.pushState({}, '', '/');
+            setIsStandaloneBirthdayDemo(false);
+          }}
+          onOrder={() => {
+            window.history.pushState({}, '', '/');
+            setIsStandaloneBirthdayDemo(false);
+            handleOpenCustomize(goldenTemplate);
+          }}
+        />
+        {isCustomizeModalOpen && (
+          <CustomizeOrderModal
+            initialTemplate={templateForCustomization}
+            onClose={() => setIsCustomizeModalOpen(false)}
+          />
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-[#1c1b1f] flex flex-col font-sans selection:bg-[#f2dfc7] selection:text-[#382210] relative">
@@ -157,6 +217,17 @@ export default function App() {
             onChooseTemplate={handleChooseTemplateScroll}
           />
         </ScrollReveal>
+
+        {/* 10. Stories & Inspiration Blog (Hidden / Closed as per user request) */}
+        {/*
+        <ScrollReveal distance={40} duration={0.8}>
+          <BlogSection 
+            onChooseTemplate={handleChooseTemplateScroll}
+            onSelectTemplate={handleOpenLiveDemoById}
+            onOpenInquiry={() => setIsInquiryModalOpen(true)}
+          />
+        </ScrollReveal>
+        */}
       </main>
 
       {/* 9. Footer */}

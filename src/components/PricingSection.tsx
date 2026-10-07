@@ -51,9 +51,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             <span>TRANSPARENT PRICING</span>
             <span>✦</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-[#2B1724] leading-[1.15] mb-5 font-serif-luxury">
+          <h2 className="text-[24px] sm:text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-5 font-serif-luxury">
             Choose the Experience That Fits<br />
-            <span className="font-bold text-[#831843]">Your Moment.</span>
+            <span className="font-bold text-[#7A0C38]">Your Moment.</span>
           </h2>
           <p className="text-[#68535F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
             Every creation is bespoke, crafted with immersive music, responsive 3D animations, and lifetime instant updates.

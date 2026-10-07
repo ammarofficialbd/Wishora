@@ -25,9 +25,53 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
           <img 
             src="/assets/wishora.png" 
             alt="wishora" 
-            className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+            className="h-[60px] w-[73px] object-contain group-hover:scale-105 transition-transform"
           />
         </a>
+
+        {/* Desktop Nav Links */}
+        <nav className="hidden md:flex items-center gap-6 text-xs lg:text-sm font-medium text-[#4A3B34]">
+          <a 
+            href="#templates-section" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('templates-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hover:text-[#7A0C38] transition-colors cursor-pointer"
+          >
+            Templates
+          </a>
+          <a 
+            href="#how-it-works-section" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hover:text-[#7A0C38] transition-colors cursor-pointer"
+          >
+            How it works
+          </a>
+          <a 
+            href="#pricing-section" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hover:text-[#7A0C38] transition-colors cursor-pointer"
+          >
+            Pricing
+          </a>
+          <a 
+            href="#faq-section" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hover:text-[#7A0C38] transition-colors cursor-pointer"
+          >
+            FAQ
+          </a>
+        </nav>
 
         {/* Right side CTA & Menu Icon */}
         <div className="flex items-center gap-2.5 sm:gap-3">

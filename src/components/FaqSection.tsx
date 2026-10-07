@@ -1,78 +1,45 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, MessageCircle, Sparkles, ArrowRight, ShieldCheck, Zap, Clock, Smartphone } from 'lucide-react';
+import { ChevronDown, HelpCircle, MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface FaqItem {
   id: string;
-  category: 'general' | 'ordering' | 'features' | 'payment';
+  badge?: string;
   question: string;
   answer: string;
-  badge?: string;
 }
 
 const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'process',
-    category: 'ordering',
-    badge: 'Quick & Simple',
-    question: 'How does the Wishora ordering and creation process work?',
-    answer: 'Simply select your favorite signature template or choose our bespoke package, enter your celebration details (couple names, dates, ceremony timings, venues, and photos), and place your order. Our design team will handcraft your personalized live interactive invitation webpage in 24–48 hours and send a private preview link directly to your WhatsApp and email. You get 2 rounds of complimentary revisions to make sure everything is 100% perfect before sharing!'
+    badge: '০১. অর্ডার প্রসেস',
+    question: 'Wishora কীভাবে কাজ করে এবং কীভাবে অর্ডার করব?',
+    answer: 'Wishora-র মাধ্যমে আপনার প্রিয়জনকে স্পেশাল কোনো দিনে (Birthday, Anniversary, Proposal, Wedding Invitation ইত্যাদি) ডিজিটাল সারপ্রাইজ বা ডিজিটাল নিমন্ত্রণ কার্ড দিতে পারেন। অর্ডার করতে আমাদের WhatsApp বা Messenger-এ নক দিন। আমাদের টিম আপনার চাওয়া অনুযায়ী কনটেন্ট ও টেমপ্লেট নির্বাচন করতে সাহায্য করবে। সবকিছু কনফার্ম হওয়ার পর নির্ধারিত সময়ের আগেই আপনার জন্য কাস্টমাইজড লিঙ্ক তৈরি করে বুঝিয়ে দেওয়া হবে।'
   },
   {
-    id: 'no-app',
-    category: 'general',
-    badge: 'Zero Friction',
-    question: 'Do my guests need to download an app or create an account to view the invite?',
-    answer: 'No app download or login is ever required! Wishora invitations are lightweight, lightning-fast web experiences designed to open seamlessly in any browser across iOS, Android, macOS, and Windows. You simply send your personalized link via WhatsApp, Messenger, Instagram, SMS, or print it as a QR code on physical gift boxes. Guests tap once and your invitation unfolds with music, countdowns, and animations.'
+    id: 'delivery-link',
+    badge: '০২. ডেলিভারি ও লিঙ্ক',
+    question: 'আমি ডেলিভারি কীভাবে পাব এবং লিঙ্কটি দেখতে কেমন হবে?',
+    answer: 'কাজ শেষ হওয়ার পর আমরা আপনাকে একটি ওয়েবসাইটের ডেলিভারি লিঙ্ক দিয়ে দেব (যেমন: wishora.online/mina)—যেখানে ক্লায়েন্ট বা যার নামে উইশ করা হচ্ছে তার নাম থাকবে। এই লিঙ্কটি আপনি সরাসরি আপনার প্রিয়জন বা অতিথিদের সাথে শেয়ার করতে পারবেন।'
   },
   {
-    id: 'rsvp-maps',
-    category: 'features',
-    badge: 'Popular Feature',
-    question: 'How do the real-time RSVP system and Google Maps navigation work?',
-    answer: 'When guests open your invite, they can instantly confirm their attendance with a single tap, enter their guest headcount, and leave personalized blessing notes. You receive organized RSVP updates to manage catering and seating. Furthermore, each ceremony venue card features a 1-tap "Get Directions" button that opens Google Maps navigation with exact coordinates.'
-  },
-  {
-    id: 'music-photos',
-    category: 'features',
-    badge: 'Customization',
-    question: 'Can we add our own background music, love story, and couple photo gallery?',
-    answer: 'Yes, absolutely! You can choose from our curated library of romantic acoustic sitar, piano, and violin melodies, or provide your favorite audio song file. You can also include high-definition photo galleries, your proposal story, multi-event schedules (Mehendi, Gaye Holud, Sangeet, Nikah, Reception), dress codes, and gift registry details.'
-  },
-  {
-    id: 'turnaround',
-    category: 'ordering',
-    badge: 'Fast Delivery',
-    question: 'How fast is delivery? Can I request urgent same-day delivery?',
-    answer: 'Standard delivery is delivered within 24 to 48 hours. If your wedding or celebration is approaching quickly, we offer an Express Rush service where our team prioritizes your order and delivers your completed invitation link within 6 to 12 hours.'
+    id: 'timeline',
+    badge: '০৩. ডেলিভারি সময়সীমা',
+    question: 'অর্ডার করার পর ডেলিভারি পেতে কত দিন সময় লাগে?',
+    answer: 'সাধারণত অর্ডার কনফার্ম হওয়ার ৩ থেকে ৫ দিনের মধ্যে আমরা ডেলিভারি সম্পূর্ণ করি। তবে আপনার প্রোভাইড করা কনটেন্ট, ছবি বা তথ্যের পরিমাণের ওপর নির্ভর করে সময় কিছুটা কম বা বেশি হতে পারে।'
   },
   {
     id: 'payment',
-    category: 'payment',
-    badge: 'Secure',
-    question: 'What payment methods do you accept in Bangladesh and internationally?',
-    answer: 'We support all major payment methods including bKash, Nagad, Rocket, Upay, Visa, Mastercard, AMEX, and direct bank transfers in Bangladeshi Taka (৳ BDT). For non-resident Bangladeshis (NRBs) and international couples, we also accept international credit cards and PayPal.'
+    badge: '০৪. পেমেন্ট পদ্ধতি',
+    question: 'পেমেন্ট কীভাবে করতে হবে?',
+    answer: 'আপনি খুব সহজেই Bkash (বিকাশ) অথবা Nagad (নগদ)-এর মাধ্যমে পেমেন্ট সম্পন্ন করতে পারবেন। কনটেন্ট ও টেমপ্লেট ফাইনাল হওয়ার পর পেমেন্ট প্রসেস সম্পন্ন করতে হয়।'
   },
   {
-    id: 'validity',
-    category: 'general',
-    question: 'How long will our interactive invitation link remain active online?',
-    answer: 'Your custom invitation webpage stays live and accessible online for 1 full year after your event date. This allows you, your family, and your guests to revisit the page, download memories, listen to your celebration playlist, and cherish the wishes left by loved ones.'
-  },
-  {
-    id: 'bilingual-custom',
-    category: 'features',
-    question: 'Can we have bilingual invitations (Bengali & English) or custom cultural rituals?',
-    answer: 'Yes! Wishora supports bilingual typography in Bengali and English with elegant traditional script styling. Whether you are hosting a traditional Bengali Hindu wedding, Muslim Nikah & Walima, Christian nuptials, Buddhist celebration, or modern cross-cultural gala, we customize all ritual names, prayers (Mantra / Quranic verses), and event timelines.'
+    id: 'support-changes',
+    badge: '০৫. সাপোর্ট ও পরিবর্তন',
+    question: 'সার্ভিস সম্পর্কিত যেকোনো পরিবর্তনের জন্য কীভাবে যোগাযোগ করব?',
+    answer: 'কনটেন্ট ডেলিভারির আগে বা তৈরির প্রক্রিয়ায় যেকোনো পরিবর্তন বা প্রশ্নের জন্য সরাসরি আমাদের সাথে WhatsApp বা Facebook Messenger-এ কথা বলতে পারবেন। আমাদের প্রতিনিধি আপনাকে সর্বাত্মক সহযোগিতা করবে।'
   }
-];
-
-const CATEGORIES = [
-  { id: 'all', label: 'All Questions' },
-  { id: 'ordering', label: 'Ordering & Delivery' },
-  { id: 'features', label: 'Features & RSVP' },
-  { id: 'general', label: 'Guest Experience' },
-  { id: 'payment', label: 'Pricing & Payments' }
 ];
 
 interface FaqSectionProps {
@@ -81,10 +48,8 @@ interface FaqSectionProps {
 }
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseTemplate }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
-    process: true, // First item open by default for immediate engagement
-    'no-app': true
+    process: true // প্রথম প্রশ্নটি স্বয়ংক্রিয়ভাবে ওপেন থাকবে
   });
 
   const toggleItem = (id: string) => {
@@ -93,11 +58,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
       [id]: !prev[id]
     }));
   };
-
-  const filteredFaqs = FAQ_ITEMS.filter((item) => {
-    if (activeCategory === 'all') return true;
-    return item.category === activeCategory;
-  });
 
   return (
     <section id="faq-section" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#EAE3D6] relative">
@@ -111,45 +71,25 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
           <span>FREQUENTLY ASKED QUESTIONS</span>
           <span>✦</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.18] mb-4 font-serif-luxury">
-          Everything You Need to Know<br />
-          <span className="italic font-serif-accent font-semibold text-[#FF1375]">About the Wishora Experience</span>
+        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-4 font-serif-luxury">
+          সাধারণ জিজ্ঞাসা ও উত্তর<br />
+          <span className="font-bold text-[#7A0C38]">Wishora Experience FAQ</span>
         </h2>
         <p className="text-sm sm:text-base text-[#6B574E] max-w-2xl mx-auto font-normal leading-relaxed">
-          Clear answers about how we craft, personalize, and deliver your live digital invitations with real-time RSVP, music, and instant WhatsApp sharing.
+          Wishora সম্পর্কিত প্রয়োজনীয় সকল তথ্যের সহজ ও পরিষ্কার উত্তর—অর্ডার প্রসেস, ডেলিভারি, পেমেন্ট এবং সাপোর্ট।
         </p>
       </div>
 
-      {/* Category Filter Pills */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 sm:mb-12">
-        {CATEGORIES.map((cat) => {
-          const isActive = activeCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer border ${
-                isActive
-                  ? 'bg-[#181210] text-[#F3D188] border-amber-500/40 shadow-xs scale-102'
-                  : 'bg-white hover:bg-[#F5EFE6] text-[#4A3C33] border-[#E5DACB]'
-              }`}
-            >
-              {cat.label}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Accordion FAQ List */}
+      {/* Accordion FAQ List - 5 Important Questions in Bengali */}
       <div className="space-y-4 mb-14">
-        {filteredFaqs.map((faq) => {
+        {FAQ_ITEMS.map((faq) => {
           const isOpen = !!openItems[faq.id];
           return (
             <div
               key={faq.id}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                 isOpen
-                  ? 'bg-white border-[#FF1375]/35 shadow-[0_10px_30px_rgba(255,19,117,0.06)]'
+                  ? 'bg-white border-[#7A0C38]/30 shadow-[0_10px_30px_rgba(122,12,56,0.08)]'
                   : 'bg-white/80 hover:bg-white border-[#E8DDD4] shadow-xs'
               }`}
             >
@@ -160,12 +100,12 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
               >
                 <div className="flex items-center gap-3 pr-2">
                   <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs shrink-0 transition-colors ${
-                    isOpen ? 'bg-[#FF1375]/10 text-[#FF1375]' : 'bg-[#F2ECE2] text-[#8C6239]'
+                    isOpen ? 'bg-[#7A0C38]/10 text-[#7A0C38]' : 'bg-[#F2ECE2] text-[#8C6239]'
                   }`}>
                     <HelpCircle className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#181210] font-serif-luxury leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-[#181210] font-sans sm:font-serif-luxury leading-snug">
                       {faq.question}
                     </h3>
                   </div>
@@ -173,7 +113,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
 
                 <div className="flex items-center gap-2.5 shrink-0">
                   {faq.badge && (
-                    <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/10 text-[#8C5D2E] border border-amber-500/20">
+                    <span className="hidden sm:inline-block text-[10px] font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/10 text-[#8C5D2E] border border-amber-500/20">
                       {faq.badge}
                     </span>
                   )}
@@ -215,10 +155,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
             <span>Dedicated WhatsApp Support</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-white mb-2 leading-tight">
-            Have a unique celebration idea or special request?
+            আপনার মনের মতো করে সাজাতে কথা বলুন আমাদের সাথে
           </h3>
           <p className="text-xs sm:text-sm text-stone-200 font-normal leading-relaxed">
-            Our creative directors are available on WhatsApp 7 days a week to assist with custom themes, urgent timelines, or questions.
+            কাস্টম ডিজাইন, বিশেষ ফিচার বা যেকোনো প্রয়োজনে সরাসরি আমাদের সাথে WhatsApp-এ যোগাযোগ করুন।
           </p>
         </div>
 
@@ -229,7 +169,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
               className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-gradient-to-r from-[#FF1375] via-[#E11D48] to-[#BE185D] hover:brightness-105 active:scale-95 text-white text-xs sm:text-sm font-bold shadow-[0_4px_16px_rgba(255,19,117,0.35)] transition-all cursor-pointer flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Ask on WhatsApp</span>
+              <span>WhatsApp-এ কথা বলুন</span>
             </button>
           )}
           {onChooseTemplate && (
@@ -237,7 +177,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
               onClick={onChooseTemplate}
               className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs sm:text-sm font-semibold border border-white/20 transition-all cursor-pointer flex items-center justify-center gap-1.5"
             >
-              <span>Explore Templates</span>
+              <span>টেমপ্লেটগুলো দেখুন</span>
               <ArrowRight className="w-4 h-4 text-amber-300" />
             </button>
           )}

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ArrowUpRight, Sparkles, Heart } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Heart, ExternalLink } from 'lucide-react';
 import { TemplateItem } from '../types';
 import { TEMPLATES } from '../data/templates';
 
@@ -31,11 +31,11 @@ export const TemplatesSection: React.FC<TemplatesSectionProps> = ({
           <span>MADE FOR EVERY MOMENT</span>
           <span>✦</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.15] mb-4 font-serif-luxury">
-          Whatever the Moment, <span className="italic font-serif-accent font-semibold text-amber-700">Make It Meaningful.</span>
+        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-4 font-serif-luxury">
+          Whatever the Moment, <span className="font-bold text-[#7A0C38]">Make It Meaningful.</span>
         </h2>
         <p className="text-[#4D3F38] text-sm sm:text-base font-normal">
-          Explore our signature collection for Birthdays and Weddings. Tap any card to open the live interactive demo.
+          Explore our signature collection for Birthdays, Proposals, and Celebrations. Tap any card to open the live interactive demo.
         </p>
       </div>
 
@@ -124,17 +124,33 @@ export const TemplatesSection: React.FC<TemplatesSectionProps> = ({
               </span>
             </div>
 
-            {/* Action Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onSelectTemplate(template.id);
-              }}
-              className="w-full py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 active:scale-[0.98] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer mt-auto shadow-[0_4px_16px_rgba(122,12,56,0.25)] hover:shadow-[0_8px_24px_rgba(122,12,56,0.4)] border border-rose-300/30"
-            >
-              <span>View template</span>
-              <ArrowUpRight className="w-4 h-4 text-white" />
-            </button>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2 mt-auto">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelectTemplate(template.id);
+                }}
+                className="flex-1 py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 active:scale-[0.98] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-[0_4px_16px_rgba(122,12,56,0.25)] hover:shadow-[0_8px_24px_rgba(122,12,56,0.4)] border border-rose-300/30"
+              >
+                <span>View template</span>
+                <ArrowUpRight className="w-4 h-4 text-white" />
+              </button>
+
+              {template.id === 'golden-birthday-gala' && (
+                <a
+                  href="/template/birthday01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="px-4 py-3 rounded-full bg-white hover:bg-rose-50 text-[#7A0C38] border border-rose-200 hover:border-rose-300 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs shrink-0 cursor-pointer group"
+                  title="Open Full View in New Tab"
+                >
+                  <span>Full View</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#ff3d6e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

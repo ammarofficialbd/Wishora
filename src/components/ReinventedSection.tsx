@@ -1,5 +1,13 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { 
+  Sparkles, 
+  Smartphone, 
+  Music, 
+  Share2, 
+  MapPin, 
+  RotateCcw, 
+  ArrowRight 
+} from 'lucide-react';
 
 interface ReinventedSectionProps {
   onChooseTemplate: () => void;
@@ -7,54 +15,61 @@ interface ReinventedSectionProps {
 
 interface FeatureItem {
   id: string;
-  icon: string;
+  icon: React.ReactNode;
+  iconBg: string;
+  iconColor: string;
   title: string;
   description: string;
-  iconBg: string;
 }
 
 const FEATURES: FeatureItem[] = [
   {
-    id: 'cost',
-    icon: '🐷',
-    iconBg: 'bg-rose-50/90 border-rose-200/90 text-rose-950',
-    title: 'Cost',
-    description: 'Cheaper than most WhatsApp and printed invites*'
+    id: 'interactive',
+    icon: <Sparkles className="w-6 h-6" />,
+    iconBg: 'bg-rose-50/90 border-rose-200/90',
+    iconColor: 'text-[#7A0C38]',
+    title: 'Interactive Experiences',
+    description: 'Ambient background music, interactive animations, scratch reveal surprises, and heartfelt personal letters that captivate guests.'
   },
   {
-    id: 'elderly',
-    icon: '🦜',
-    iconBg: 'bg-emerald-50/90 border-emerald-200/90 text-emerald-950',
-    title: 'Elderly-friendly Design',
-    description: 'No more squinting at tiny, boring WhatsApp videos'
+    id: 'effortless',
+    icon: <Smartphone className="w-6 h-6" />,
+    iconBg: 'bg-emerald-50/90 border-emerald-200/90',
+    iconColor: 'text-emerald-700',
+    title: 'Elderly & Mobile-Friendly',
+    description: 'Opens with 1 tap on any smartphone or computer. No confusing app downloads, signups, or accounts needed.'
   },
   {
-    id: 'pre-wedding',
-    icon: '📸',
-    iconBg: 'bg-amber-50/90 border-amber-200/90 text-amber-950',
-    title: 'Pre-Wedding Highlight',
-    description: 'Showcase your shoot like never before'
+    id: 'memories',
+    icon: <Music className="w-6 h-6" />,
+    iconBg: 'bg-amber-50/90 border-amber-200/90',
+    iconColor: 'text-[#8C5D2E]',
+    title: 'Custom Audio & Photo Chapters',
+    description: 'Highlight your story with your favorite romantic or celebratory playlists, high-resolution photo galleries, and chronological life chapters.'
+  },
+  {
+    id: 'sharing',
+    icon: <Share2 className="w-6 h-6" />,
+    iconBg: 'bg-purple-50/90 border-purple-200/90',
+    iconColor: 'text-purple-700',
+    title: 'Instant WhatsApp Delivery',
+    description: 'Get a clean, personalized link (like wishora.online/ayaan) ready to share instantly via WhatsApp, Messenger, or QR code.'
+  },
+  {
+    id: 'rsvp-maps',
+    icon: <MapPin className="w-6 h-6" />,
+    iconBg: 'bg-blue-50/90 border-blue-200/90',
+    iconColor: 'text-blue-700',
+    title: 'Live RSVP & Venue Navigation',
+    description: 'For events and gatherings, collect guest confirmations in real-time with 1-tap Google Maps directions to ceremony venues.'
   },
   {
     id: 'revisions',
-    icon: '📜',
-    iconBg: 'bg-sky-50/90 border-sky-200/90 text-sky-950',
-    title: '2 Revisions',
-    description: 'Two rounds of changes included, even after sharing'
-  },
-  {
-    id: 'ready-made',
-    icon: '🪔',
-    iconBg: 'bg-orange-50/90 border-orange-200/90 text-orange-950',
-    title: 'Ready-Made Templates',
-    description: 'Includes invites and editable mantras (Hindu weddings only)'
-  },
-  {
-    id: 'private-events',
-    icon: '🔒',
-    iconBg: 'bg-purple-50/90 border-purple-200/90 text-purple-950',
-    title: 'Private Event Pages',
-    description: 'Invite different guests to different events'
+    icon: <RotateCcw className="w-6 h-6" />,
+    iconBg: 'bg-orange-50/90 border-orange-200/90',
+    iconColor: 'text-orange-700',
+    title: '2 Free Revisions & Fast Turnaround',
+    description: 'Delivered in 24–48 hours directly to your WhatsApp, with 2 rounds of edits included so every detail is 100% perfect.'
   }
 ];
 
@@ -67,13 +82,13 @@ export const ReinventedSection: React.FC<ReinventedSectionProps> = ({ onChooseTe
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-600/20 text-[#8C5D2E] text-[11px] font-bold tracking-widest uppercase mb-3 font-display w-fit">
             <span>THE EXPERIENCE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#181210] leading-[1.15] mb-5 font-serif-luxury">
-            The Wedding Invite,<br />
-            <span className="text-[#181210] font-extrabold">Reinvented.</span>
+          <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-5 font-serif-luxury">
+            Digital Invitations &amp; Wishes,<br />
+            <span className="text-[#7A0C38] font-bold">Reinvented.</span>
           </h2>
 
           <p className="text-[#4D3F38] text-sm sm:text-base leading-relaxed mb-8 max-w-md font-normal">
-            Everything a printed card or WhatsApp video can't be: interactive, instant, and unmistakably you.
+            Everything traditional printed cards or static images cannot be: interactive, memorable, and unmistakably personalized for birthdays, weddings, anniversaries, and milestones.
           </p>
 
           <div>
@@ -88,15 +103,15 @@ export const ReinventedSection: React.FC<ReinventedSectionProps> = ({ onChooseTe
           </div>
         </div>
 
-        {/* Right Column: 6 Feature Items List */}
+        {/* Right Column: 6 Refined Feature Items List */}
         <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6">
           {FEATURES.map((item) => (
             <div
               key={item.id}
               className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl bg-white/90 hover:bg-white border border-[#EAE3D6] hover:border-amber-400/60 shadow-xs hover:shadow-md transition-all duration-200"
             >
-              {/* Thematic Jewel Icon Container */}
-              <div className={`w-12 h-12 rounded-2xl ${item.iconBg} border flex items-center justify-center text-2xl shrink-0 shadow-xs`}>
+              {/* Feature Icon Container */}
+              <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} border flex items-center justify-center shrink-0 shadow-xs`}>
                 {item.icon}
               </div>
 

@@ -26,16 +26,16 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#181210] leading-[1.18] mb-4 font-serif-luxury">
+        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-4 font-serif-luxury">
           Don't Take Our Word for It.<br />
-          <span className="italic font-serif-accent font-normal text-[#8C5D2E]">
+          <span className="font-bold text-[#7A0C38]">
             Here's What Real Couples Are Saying
           </span>
         </h2>
 
         {/* Rating Pill */}
-        <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 px-4 py-2.5 sm:py-1.5 rounded-2xl sm:rounded-full bg-white border border-[#E6DACB] shadow-xs text-xs sm:text-sm font-medium text-[#181210] mt-2 max-w-full">
-          <div className="flex items-center gap-1.5">
+        <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 px-5 py-3 sm:py-1.5 rounded-2xl sm:rounded-full bg-white border border-[#E6DACB] shadow-xs text-xs sm:text-sm font-medium text-[#181210] mt-2 max-w-[92%] sm:max-w-full mx-auto">
+          <div className="flex items-center gap-1.5 shrink-0">
             <div className="flex items-center text-[#E5A93C] gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3.5 h-3.5 fill-current" />
