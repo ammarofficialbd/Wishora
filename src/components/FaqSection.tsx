@@ -68,12 +68,12 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
       <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-600/20 text-[#8C5D2E] text-[11px] font-bold tracking-widest uppercase mb-3 font-display">
           <span>✦</span>
-          <span>FREQUENTLY ASKED QUESTIONS</span>
+          <span>সাধারণ জিজ্ঞাসা</span>
           <span>✦</span>
         </div>
-        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-4 font-serif-luxury">
-          সাধারণ জিজ্ঞাসা ও উত্তর<br />
-          <span className="font-bold text-[#7A0C38]">Wishora Experience FAQ</span>
+        <h2 className="text-[24px] sm:text-4xl md:text-[44px] lg:text-[44px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.2] mb-4 font-serif-luxury">
+          সাধারণ কিছু প্রশ্ন ও তার<br />
+          <span className="font-bold text-[#7A0C38]">সহজ ও পরিষ্কার উত্তর</span>
         </h2>
         <p className="text-sm sm:text-base text-[#6B574E] max-w-2xl mx-auto font-normal leading-relaxed">
           Wishora সম্পর্কিত প্রয়োজনীয় সকল তথ্যের সহজ ও পরিষ্কার উত্তর—অর্ডার প্রসেস, ডেলিভারি, পেমেন্ট এবং সাপোর্ট।
@@ -152,7 +152,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
         <div className="relative z-10 max-w-xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white/10 text-[#FDE68A] text-[11px] font-semibold tracking-wide mb-3 border border-white/15">
             <Sparkles className="w-3 h-3 text-amber-300" />
-            <span>Dedicated WhatsApp Support</span>
+            <span>সরাসরি হোয়াটসঅ্যাপ সহায়তা</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-white mb-2 leading-tight">
             আপনার মনের মতো করে সাজাতে কথা বলুন আমাদের সাথে
@@ -170,15 +170,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenInquiry, onChooseT
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp-এ কথা বলুন</span>
-            </button>
-          )}
-          {onChooseTemplate && (
-            <button
-              onClick={onChooseTemplate}
-              className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs sm:text-sm font-semibold border border-white/20 transition-all cursor-pointer flex items-center justify-center gap-1.5"
-            >
-              <span>টেমপ্লেটগুলো দেখুন</span>
-              <ArrowRight className="w-4 h-4 text-amber-300" />
             </button>
           )}
         </div>

@@ -65,10 +65,10 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
         <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#E8DDCF] flex items-center justify-between bg-white/85 backdrop-blur-sm sticky top-0 z-20 shrink-0">
           <div>
             <h3 className="text-lg sm:text-xl font-bold font-serif-luxury text-[#2B1724]">
-              Personalise Your Invitation Link
+              আপনার ডিজিটাল নিমন্ত্রণটি সাজান
             </h3>
             <p className="text-[11px] sm:text-xs text-[#7A685D]">
-              Ready in 24 hours · Delivered directly on WhatsApp &amp; Email
+              ২৪ ঘণ্টার মধ্যে প্রস্তুত · সরাসরি হোয়াটসঅ্যাপ ও ইমেইলে ডেলিভারি
             </p>
           </div>
 
@@ -90,24 +90,24 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               </div>
 
               <h3 className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#2B1724]">
-                Order Received! ✨
+                অর্ডার সফলভাবে গ্রহণ করা হয়েছে! ✨
               </h3>
               <p className="text-xs sm:text-sm text-[#5A454F] max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{formData.groomName || 'Couple'}</strong>. Our design artisan will prepare your live website link for <strong>{selectedTemplate.name}</strong> and deliver the draft preview to <strong>{formData.whatsappNumber || 'your WhatsApp'}</strong> within 24 hours.
+                ধন্যবাদ, <strong>{formData.groomName || 'আপনাকে'}</strong>। আমাদের ডিজাইন টিম <strong>{selectedTemplate.name}</strong>-এর জন্য আপনার ওয়েবসাইট লিঙ্ক প্রস্তুত করবে এবং ২৪ ঘণ্টার মধ্যে <strong>{formData.whatsappNumber || 'আপনার হোয়াটসঅ্যাপে'}</strong> ড্রাফট প্রিভিউ পাঠিয়ে দেওয়া হবে।
               </p>
 
               {/* Sample WhatsApp Link Preview */}
               <div className="max-w-md mx-auto p-3.5 sm:p-4 rounded-2xl bg-[#e9f7ef] border border-emerald-200 text-left">
                 <div className="flex items-center gap-2 mb-2 text-emerald-800 font-bold text-xs">
                   <MessageCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Previewing Your WhatsApp Message:</span>
+                  <span>আপনার হোয়াটসঅ্যাপ মেসেজ প্রিভিউ:</span>
                 </div>
                 <div className="bg-white p-3 rounded-xl border border-emerald-100 text-xs font-sans text-stone-800 shadow-xs">
                   <p className="font-bold text-amber-950 font-serif-luxury">
-                    🌸 {formData.groomName || 'Groom'} &amp; {formData.brideName || 'Bride'}'s Wedding Celebration 🌸
+                    🌸 {formData.groomName || 'বর'} ও {formData.brideName || 'কনে'}'র শুভ বিবাহ 🌸
                   </p>
                   <p className="mt-1 text-stone-600">
-                    We invite you and your family to join us on {formData.weddingDate || 'our special day'}.
+                    আমাদের জীবনের এই বিশেষ দিনে আপনাকে ও আপনার পরিবারকে আন্তরিক নিমন্ত্রণ।
                   </p>
                   <p className="mt-2 text-blue-600 underline font-medium break-all">
                     https://wishora.online/{((formData.groomName || 'g') + '-' + (formData.brideName || 'b')).toLowerCase().replace(/\s+/g, '')}
@@ -120,7 +120,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                   onClick={onClose}
                   className="px-8 py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white font-semibold text-xs sm:text-sm hover:brightness-110 active:scale-95 transition-all shadow-xs cursor-pointer"
                 >
-                  Done
+                  সম্পন্ন হয়েছে
                 </button>
               </div>
             </div>
@@ -129,7 +129,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               {/* Template Selector */}
               <div>
                 <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1.5">
-                  Selected Design
+                  নির্বাচিত ডিজাইন
                 </label>
                 <div className="flex items-center gap-2.5 sm:gap-3 p-3 rounded-2xl border border-stone-200 bg-stone-50">
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100 flex items-center justify-center text-base sm:text-lg font-serif-luxury font-bold text-amber-900 shrink-0">
@@ -164,12 +164,12 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    Groom / Host Name *
+                    বরের নাম / প্রধান ব্যক্তি *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Kabir / Ahnaf"
+                    placeholder="যেমন: কবির / আহনাফ"
                     value={formData.groomName}
                     onChange={(e) => setFormData({ ...formData, groomName: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -177,12 +177,12 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                 </div>
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    Bride / Host Name *
+                    কনের নাম / প্রিয় মানুষ *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Ananya / Mina"
+                    placeholder="যেমন: অনন্যা / মিনা"
                     value={formData.brideName}
                     onChange={(e) => setFormData({ ...formData, brideName: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -194,12 +194,12 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    Event Date(s) *
+                    অনুষ্ঠানের তারিখ *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. 24 November 2026"
+                    placeholder="যেমন: ২৪ নভেম্বর ২০২৬"
                     value={formData.weddingDate}
                     onChange={(e) => setFormData({ ...formData, weddingDate: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -207,12 +207,12 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                 </div>
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    City / Venue Location *
+                    শহর / ভেন্যুর ঠিকানা *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Gulshan Club, Dhaka"
+                    placeholder="যেমন: গুলশান ক্লাব, ঢাকা"
                     value={formData.cityVenue}
                     onChange={(e) => setFormData({ ...formData, cityVenue: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -224,12 +224,12 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    WhatsApp Number (for delivery) *
+                    হোয়াটসঅ্যাপ নম্বর (ডেলিভারির জন্য) *
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 01712345678"
+                    placeholder="যেমন: 01712345678"
                     value={formData.whatsappNumber}
                     onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -237,17 +237,16 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                 </div>
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                    Language Preference
+                    ভাষার পছন্দ
                   </label>
                   <select
                     value={formData.language}
                     onChange={(e) => setFormData({ ...formData, language: e.target.value })}
                     className="w-full p-2.5 sm:p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white cursor-pointer"
                   >
-                    <option value="Bangla & English">Bangla &amp; English (Most Popular)</option>
-                    <option value="Bangla only">Bangla (বাংলা)</option>
-                    <option value="English only">English only</option>
-                    <option value="English & Hindi">English &amp; Hindi</option>
+                    <option value="Bangla only">বাংলা (সর্বাধিক জনপ্রিয়)</option>
+                    <option value="Bangla & English">বাংলা ও ইংরেজি (উভয়ই)</option>
+                    <option value="English only">ইংরেজি</option>
                   </select>
                 </div>
               </div>
@@ -255,7 +254,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               {/* Optional Customizations Toggles */}
               <div className="pt-2 border-t border-stone-100">
                 <p className="text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-2">
-                  Interactive Features Included
+                  অন্তর্ভুক্ত বিশেষ সুবিধাসমূহ
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <label className="flex items-center gap-2 p-2.5 rounded-xl bg-stone-50 border border-stone-200 cursor-pointer active:scale-98">
@@ -265,7 +264,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                       onChange={(e) => setFormData({ ...formData, includeMusic: e.target.checked })}
                       className="rounded text-rose-700 w-4 h-4"
                     />
-                    <span className="text-xs text-stone-800 font-medium">Ceremonial Music</span>
+                    <span className="text-xs text-stone-800 font-medium">আবহ সংগীত</span>
                   </label>
 
                   <label className="flex items-center gap-2 p-2.5 rounded-xl bg-stone-50 border border-stone-200 cursor-pointer active:scale-98">
@@ -275,7 +274,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                       onChange={(e) => setFormData({ ...formData, includeRsvp: e.target.checked })}
                       className="rounded text-rose-700 w-4 h-4"
                     />
-                    <span className="text-xs text-stone-800 font-medium">Guest RSVP Tracker</span>
+                    <span className="text-xs text-stone-800 font-medium">অতিথি RSVP ট্র্যাকার</span>
                   </label>
 
                   <label className="flex items-center gap-2 p-2.5 rounded-xl bg-stone-50 border border-stone-200 cursor-pointer active:scale-98">
@@ -285,7 +284,7 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                       onChange={(e) => setFormData({ ...formData, includeMap: e.target.checked })}
                       className="rounded text-rose-700 w-4 h-4"
                     />
-                    <span className="text-xs text-stone-800 font-medium">Google Maps Navigation</span>
+                    <span className="text-xs text-stone-800 font-medium">গুগল ম্যাপস লোকেশন</span>
                   </label>
                 </div>
               </div>
@@ -293,11 +292,11 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
               {/* Additional notes / requests */}
               <div>
                 <label className="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wide mb-1">
-                  Special Notes or Event Details (Optional)
+                  বিশেষ বার্তা বা কোনো অনুরোধ (ঐচ্ছিক)
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="e.g. Please include Mehendi, Holud, and Reception events. Add our hashtag."
+                  placeholder="যেমন: গায়ে হলুদ ও রিসেপশনের শিডিউল যুক্ত করতে চাই। আমাদের হ্যাশট্যাগ দিন।"
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   className="w-full p-2.5 rounded-xl border border-stone-200 text-base sm:text-sm focus:outline-amber-600 bg-white"
@@ -311,11 +310,11 @@ export const CustomizeOrderModal: React.FC<CustomizeOrderModalProps> = ({
                   className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 active:scale-[0.98] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer border border-rose-300/30"
                 >
                   <Sparkles className="w-4 h-4 text-white" />
-                  <span>Proceed with {selectedTemplate.name} — ৳{selectedTemplate.discountPrice}</span>
+                  <span>{selectedTemplate.name} অর্ডার করুন — ৳{selectedTemplate.discountPrice}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <p className="text-center text-[10px] sm:text-[11px] text-[#7A685D] mt-2">
-                  🔒 Secure WhatsApp delivery · 2 free rounds of edits included
+                  🔒 নিরাপদ হোয়াটসঅ্যাপ ডেলিভারি · ২টি ফ্রি রিভিশন সুবিধা
                 </p>
               </div>
             </form>

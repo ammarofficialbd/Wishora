@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
             }}
             className="hover:text-[#7A0C38] transition-colors cursor-pointer"
           >
-            Templates
+            টেমপ্লেটসমূহ
           </a>
           <a 
             href="#how-it-works-section" 
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
             }}
             className="hover:text-[#7A0C38] transition-colors cursor-pointer"
           >
-            How it works
+            কীভাবে কাজ করে
           </a>
           <a 
             href="#pricing-section" 
@@ -59,7 +59,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
             }}
             className="hover:text-[#7A0C38] transition-colors cursor-pointer"
           >
-            Pricing
+            প্যাকেজ ও খরচ
+          </a>
+          <a 
+            href="#blog-section" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('blog-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hover:text-[#7A0C38] transition-colors cursor-pointer"
+          >
+            ব্লগ ও গল্প
           </a>
           <a 
             href="#faq-section" 
@@ -69,31 +79,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onChooseTemplate, onOpenMenu }) 
             }}
             className="hover:text-[#7A0C38] transition-colors cursor-pointer"
           >
-            FAQ
+            সাধারণ জিজ্ঞাসা
           </a>
         </nav>
 
-        {/* Right side CTA & Menu Icon */}
+        {/* Right side CTA Button */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Desktop/Tablet CTA Button - Hidden on Mobile */}
           <button
             onClick={onChooseTemplate}
             id="nav-choose-template-btn"
-            className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_4px_16px_rgba(122,12,56,0.25)] cursor-pointer whitespace-nowrap border border-rose-200/20"
+            className="inline-flex px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-xs sm:text-sm font-semibold active:scale-95 transition-all shadow-[0_4px_16px_rgba(122,12,56,0.25)] cursor-pointer whitespace-nowrap border border-rose-200/20"
           >
-            Choose a template
-          </button>
-
-          {/* Menu Toggle Button */}
-          <button
-            onClick={() => {
-              onOpenMenu();
-            }}
-            id="nav-menu-toggle"
-            className="p-2.5 rounded-full bg-[#F2ECE2] hover:bg-[#E5DACB] text-[#2B1724] transition-colors cursor-pointer border border-[#E0D4C3] shadow-xs flex items-center justify-center active:scale-95"
-            aria-label="Open menu"
-          >
-            <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+            টেমপ্লেট বেছে নিন
           </button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  X, Check, Music, ArrowRight, Sparkles, ExternalLink, Smartphone, Info 
+  X, Check, Music, ArrowRight, Sparkles, Smartphone, Info, Eye, Edit3 
 } from 'lucide-react';
 import { TemplateItem } from '../types';
 import { audioController } from '../utils/audio';
@@ -11,12 +11,14 @@ interface LiveInviteModalProps {
   template: TemplateItem | null;
   onClose: () => void;
   onCustomize: (template: TemplateItem) => void;
+  onOpenBirthdayDemo?: (editMode?: boolean) => void;
 }
 
 export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
   template,
   onClose,
-  onCustomize
+  onCustomize,
+  onOpenBirthdayDemo
 }) => {
   const [mobileTab, setMobileTab] = useState<'preview' | 'details'>('preview');
 
@@ -72,7 +74,7 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
               }`}
             >
               <Smartphone className="w-3.5 h-3.5" />
-              <span>Live Preview</span>
+              <span>লাইভ ডেমো</span>
             </button>
             <button
               onClick={() => setMobileTab('details')}
@@ -83,7 +85,7 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
               }`}
             >
               <Info className="w-3.5 h-3.5" />
-              <span>Details &amp; Price</span>
+              <span>ফিচার ও প্যাকেজ</span>
             </button>
           </div>
 
@@ -108,11 +110,29 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
 
         {/* Left Side: Interactive Smartphone Simulator */}
         <div 
-          className={`w-full md:w-1/2 h-full bg-gradient-to-b from-[#F3EBE1] to-[#EBE0D3] p-2.5 sm:p-5 flex flex-col items-center justify-center overflow-hidden border-r border-[#E2D4C3] ${
+          className={`w-full md:w-1/2 h-full bg-gradient-to-b from-[#F3EBE1] to-[#EBE0D3] p-2.5 sm:p-4 flex flex-col items-center justify-center overflow-hidden border-r border-[#E2D4C3] ${
             mobileTab === 'preview' ? 'flex' : 'hidden md:flex'
           }`}
         >
-          <div className="relative w-full max-w-[310px] sm:max-w-[340px] h-[calc(94vh-140px)] sm:h-[600px] md:h-[640px] max-h-[660px] bg-[#4A1525] rounded-[38px] sm:rounded-[42px] p-2.5 sm:p-3 shadow-2xl border-[4px] sm:border-[5px] border-[#662035] flex flex-col justify-between overflow-hidden">
+          {/* Quick Full View Banner on top of phone preview */}
+          {isSurpriseTemplate && (
+            <button
+              onClick={() => {
+                onClose();
+                if (onOpenBirthdayDemo) {
+                  onOpenBirthdayDemo(false);
+                } else {
+                  window.location.href = '/template/birthday01';
+                }
+              }}
+              className="mb-2 px-4 py-1.5 rounded-full bg-[#2a0610] hover:bg-[#4a0a1c] text-amber-200 border border-amber-400/40 text-xs font-bold shadow-md flex items-center gap-1.5 transition-all cursor-pointer hover:scale-105 active:scale-95 animate-pulse"
+            >
+              <Eye className="w-3.5 h-3.5 text-amber-400" />
+              <span>সম্পূর্ণ ফুল স্ক্রিন ভিউ খুলুন ↗</span>
+            </button>
+          )}
+
+          <div className="relative w-full max-w-[310px] sm:max-w-[340px] h-[calc(94vh-140px)] sm:h-[580px] md:h-[620px] max-h-[640px] bg-[#4A1525] rounded-[38px] sm:rounded-[42px] p-2.5 sm:p-3 shadow-2xl border-[4px] sm:border-[5px] border-[#662035] flex flex-col justify-between overflow-hidden">
             
             {/* Phone Notch */}
             <div className="w-24 sm:w-28 h-3.5 sm:h-4 bg-[#320C18] mx-auto rounded-full mb-1 flex items-center justify-center shrink-0">
@@ -126,7 +146,7 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
             >
               {isSurpriseTemplate ? (
                 <BirthdaySurpriseTemplate
-                  name={personName}
+                  name="Ahnaf"
                   isEmbedded={true}
                   onOrder={() => onCustomize(template)}
                 />
@@ -150,14 +170,14 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
               onClick={() => onCustomize(template)}
               className="flex-1 py-2 px-3 rounded-xl bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95"
             >
-              <span>Order Template (৳{template.discountPrice})</span>
+              <span>অর্ডার করুন (৳{template.discountPrice})</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => setMobileTab('details')}
               className="py-2 px-3 rounded-xl bg-white border border-[#E0D4C3] text-[#2B1724] font-semibold text-xs active:scale-95 whitespace-nowrap"
             >
-              Details
+              বিস্তারিত
             </button>
           </div>
         </div>
@@ -171,7 +191,7 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs bg-[#EFE7DC] text-[#8C5D2E] border border-[#E2D5C3] px-3 py-1 rounded-full font-semibold">
-                {template.categoryLabel || 'Celebration'}
+                {template.categoryLabel || 'উৎসব'}
               </span>
               {template.tag && (
                 <span className="text-xs bg-rose-100 text-[#7A0C38] border border-rose-200 px-3 py-1 rounded-full font-bold flex items-center gap-1">
@@ -193,32 +213,45 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
                 ৳{template.originalPrice.toLocaleString('en-US')}
               </span>
               <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-md">
-                Save {Math.round((1 - template.discountPrice / template.originalPrice) * 100)}%
+                {Math.round((1 - template.discountPrice / template.originalPrice) * 100)}% ছাড়
               </span>
             </div>
 
-            {/* Full View (Open in New Tab) Button */}
+            {/* Full View & Live Edit Buttons */}
             {isSurpriseTemplate && (
-              <a
-                href="/template/birthday01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between gap-3 w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-[#2a0610] via-[#5a1024] to-[#7a0f2e] text-white hover:brightness-110 text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg active:scale-[0.99] cursor-pointer mb-5 border border-rose-400/40 group"
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="p-1.5 rounded-lg bg-white/10 text-[#ff3d6e] group-hover:rotate-12 transition-transform">
-                    <Sparkles className="w-4 h-4 text-[#ff3d6e]" />
-                  </span>
-                  <div className="text-left">
-                    <div className="text-amber-200 font-bold">Full View (Open in New Tab)</div>
-                    <div className="text-[10px] text-rose-200/80 font-normal">Separate full template page (no header/footer)</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs bg-white/15 px-3 py-1.5 rounded-full text-white font-semibold shrink-0 group-hover:bg-white/25 transition-colors">
-                  <span>Full View</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-amber-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
-              </a>
+              <div className="grid grid-cols-2 gap-2.5 mb-5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    if (onOpenBirthdayDemo) {
+                      onOpenBirthdayDemo(false);
+                    } else {
+                      window.location.href = '/template/birthday01';
+                    }
+                  }}
+                  className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-2xl bg-gradient-to-r from-[#2a0610] via-[#5a1024] to-[#7a0f2e] text-white hover:brightness-110 text-xs sm:text-sm font-bold transition-all shadow-md active:scale-[0.99] cursor-pointer border border-rose-400/40 group"
+                >
+                  <Eye className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
+                  <span>ফুল ভিউ দেখুন</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    if (onOpenBirthdayDemo) {
+                      onOpenBirthdayDemo(true);
+                    } else {
+                      window.location.href = '/template/birthday01';
+                    }
+                  }}
+                  className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-2xl bg-amber-500/15 hover:bg-amber-500/25 text-[#7A0C38] text-xs sm:text-sm font-bold transition-all shadow-sm active:scale-[0.99] cursor-pointer border border-amber-600/40 group"
+                >
+                  <Edit3 className="w-4 h-4 text-[#ff3d6e] group-hover:rotate-12 transition-transform" />
+                  <span>এডিট করুন (লাইভ)</span>
+                </button>
+              </div>
             )}
 
             <p className="text-[#5A454F] text-xs sm:text-sm leading-relaxed mb-6 font-normal">
@@ -228,61 +261,61 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
             {/* Included in this template breakdown */}
             <div className="space-y-3 mb-8">
               <h4 className="text-xs font-bold text-[#2B1724] uppercase tracking-wider">
-                What's included in this design:
+                এই ডিজাইনে যা যা থাকছে:
               </h4>
 
               {isSurpriseTemplate ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#5A454F]">
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Countdown Surprise Intro Screen</span>
+                    <span>রোমাঞ্চকর কাউন্টডাউন স্ক্রিন</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>10 Balloon Popping Affirmations</span>
+                    <span>১০টি বেলুন পপ ও মিষ্টি বার্তা</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Interactive Cake Cutting &amp; Flames</span>
+                    <span>ইন্টারেক্টিভ কেক কাটিং ও মোমবাতি</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Memory Photo Gallery with Lightbox</span>
+                    <span>স্মৃতিময় ফটো গ্যালারি ও স্লাইডার</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Wax Envelope Typewriter Letter</span>
+                    <span>টাইপরাইটার স্টাইলে লেখা চিঠি</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>6 3D Flip Wish Cards &amp; Grand Finale</span>
+                    <span>৬টি ৩ডি উইশ কার্ড ও সেলিব্রেশন</span>
                   </div>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#5A454F]">
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Wax-Sealed Unfolding Letter</span>
+                    <span>রয়্যাল ওয়াক্স সিল চিঠি</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Music className="w-3.5 h-3.5 text-[#A81B5B] shrink-0" />
-                    <span>Ambient Flute Celebration Music</span>
+                    <span>মন জুড়ানো সেলিব্রেশন মিউজিক</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Scratch-to-Reveal Surprise Gift</span>
+                    <span>সারপ্রাইজ স্ক্র্যাচ কার্ড</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>5 Blowable Cake Candles &amp; Flame</span>
+                    <span>মোমবাতি নেভানোর জীবন্ত অ্যানিমেশন</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>3D Flip Wish Cards for the Year</span>
+                    <span>আগামী বছরের আশীর্বাদ কার্ড</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#EADBCC] shadow-xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>24 Hour Delivery on WhatsApp</span>
+                    <span>২৪ ঘণ্টার মধ্যে হোয়াটসঅ্যাপে ডেলিভারি</span>
                   </div>
                 </div>
               )}
@@ -295,11 +328,11 @@ export const LiveInviteModal: React.FC<LiveInviteModalProps> = ({
               onClick={() => onCustomize(template)}
               className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md cursor-pointer border border-rose-300/30"
             >
-              <span>Personalise &amp; Order — ৳{template.discountPrice}</span>
+              <span>কাস্টমাইজ ও অর্ডার করুন — ৳{template.discountPrice}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <p className="text-center text-[10px] sm:text-[11px] text-[#87746D]">
-              No technical knowledge needed · We handle photos, timings, and WhatsApp link setup
+              কোনো টেকনিক্যাল ঝামেলার প্রয়োজন নেই · ছবি, তথ্য ও লিঙ্ক সম্পূর্ণ রেডি করে দেব আমরা
             </p>
           </div>
         </div>

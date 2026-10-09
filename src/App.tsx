@@ -8,8 +8,8 @@ import { ReinventedSection } from './components/ReinventedSection';
 import { HowItWorks } from './components/HowItWorks';
 import { PricingSection } from './components/PricingSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { BlogSection } from './components/BlogSection';
 import { FaqSection } from './components/FaqSection';
-// import { BlogSection } from './components/BlogSection';
 import { Footer } from './components/Footer';
 import { LiveInviteModal } from './components/LiveInviteModal';
 import { CustomizeOrderModal } from './components/CustomizeOrderModal';
@@ -48,6 +48,7 @@ export default function App() {
   };
 
   const [isStandaloneBirthdayDemo, setIsStandaloneBirthdayDemo] = useState(checkIsBirthdayDemoRoute);
+  const [isBirthdayEditMode, setIsBirthdayEditMode] = useState(false);
 
   useEffect(() => {
     const handleUrlChange = () => {
@@ -93,6 +94,13 @@ export default function App() {
     setSelectedTemplateForLiveDemo(template);
   };
 
+  const handleOpenBirthdayDemo = (editMode = false) => {
+    setSelectedTemplateForLiveDemo(null);
+    window.history.pushState({}, '', '/template/birthday01');
+    setIsBirthdayEditMode(editMode);
+    setIsStandaloneBirthdayDemo(true);
+  };
+
   const handleOpenCustomize = (template?: TemplateItem) => {
     setTemplateForCustomization(template || TEMPLATES[0]);
     setIsCustomizeModalOpen(true);
@@ -112,15 +120,18 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#2a0610]">
         <BirthdaySurpriseTemplate
-          name={goldenTemplate.groomName || 'Ahnaf'}
+          name="Ahnaf"
           isEmbedded={false}
+          initialEditMode={isBirthdayEditMode}
           onClose={() => {
             window.history.pushState({}, '', '/');
             setIsStandaloneBirthdayDemo(false);
+            setIsBirthdayEditMode(false);
           }}
           onOrder={() => {
             window.history.pushState({}, '', '/');
             setIsStandaloneBirthdayDemo(false);
+            setIsBirthdayEditMode(false);
             handleOpenCustomize(goldenTemplate);
           }}
         />
@@ -177,6 +188,7 @@ export default function App() {
           <TemplatesSection
             onSelectTemplate={handleOpenLiveDemoById}
             onOpenInquiry={() => setIsInquiryModalOpen(true)}
+            onOpenBirthdayDemo={handleOpenBirthdayDemo}
           />
         </ScrollReveal>
 
@@ -198,9 +210,6 @@ export default function App() {
         <ScrollReveal distance={40} duration={0.8}>
           <PricingSection 
             onChooseTemplate={handleChooseTemplateScroll}
-            onChoosePackage={(_pkgName) => {
-              handleOpenCustomize();
-            }}
             onOpenInquiry={() => setIsInquiryModalOpen(true)}
           />
         </ScrollReveal>
@@ -210,24 +219,22 @@ export default function App() {
           <TestimonialsSection />
         </ScrollReveal>
 
-        {/* 9. Frequently Asked Questions */}
+        {/* 9. Blog & Stories Section */}
+        <ScrollReveal distance={40} duration={0.8}>
+          <BlogSection
+            onChooseTemplate={handleChooseTemplateScroll}
+            onSelectTemplate={handleOpenLiveDemoById}
+            onOpenInquiry={() => setIsInquiryModalOpen(true)}
+          />
+        </ScrollReveal>
+
+        {/* 10. Frequently Asked Questions */}
         <ScrollReveal distance={40} duration={0.8}>
           <FaqSection 
             onOpenInquiry={() => setIsInquiryModalOpen(true)}
             onChooseTemplate={handleChooseTemplateScroll}
           />
         </ScrollReveal>
-
-        {/* 10. Stories & Inspiration Blog (Hidden / Closed as per user request) */}
-        {/*
-        <ScrollReveal distance={40} duration={0.8}>
-          <BlogSection 
-            onChooseTemplate={handleChooseTemplateScroll}
-            onSelectTemplate={handleOpenLiveDemoById}
-            onOpenInquiry={() => setIsInquiryModalOpen(true)}
-          />
-        </ScrollReveal>
-        */}
       </main>
 
       {/* 9. Footer */}
@@ -252,6 +259,7 @@ export default function App() {
             setSelectedTemplateForLiveDemo(null);
             handleOpenCustomize(template);
           }}
+          onOpenBirthdayDemo={handleOpenBirthdayDemo}
         />
       )}
 

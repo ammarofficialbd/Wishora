@@ -14,13 +14,14 @@ export const FullscreenMenuModal: React.FC<FullscreenMenuModalProps> = ({
   onChooseTemplate,
 }) => {
   const menuItems = [
-    { label: 'Home', href: '#', isScroll: false },
-    { label: 'Templates', href: '#templates-section', isScroll: true },
-    { label: 'Features', href: '#reinvented-section', isScroll: true },
-    { label: 'How it works', href: '#how-it-works-section', isScroll: true },
-    { label: 'Reviews', href: '#reviews-section', isScroll: true },
-    { label: 'FAQ', href: '#faq-section', isScroll: true },
-    { label: 'Shop invites', href: '#templates-section', isScroll: true },
+    { label: 'হোম', href: '#', isScroll: false },
+    { label: 'টেমপ্লেটসমূহ', href: '#templates-section', isScroll: true },
+    { label: 'বৈশিষ্ট্যসমূহ', href: '#reinvented-section', isScroll: true },
+    { label: 'কীভাবে কাজ করে', href: '#how-it-works-section', isScroll: true },
+    { label: 'রিভিউ ও প্রতিক্রিয়া', href: '#reviews-section', isScroll: true },
+    { label: 'ব্লগ ও গল্প', href: '#blog-section', isScroll: true },
+    { label: 'সাধারণ জিজ্ঞাসা', href: '#faq-section', isScroll: true },
+    { label: 'ইনভাইটেশন শপ', href: '#templates-section', isScroll: true },
   ];
 
   const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isScroll: boolean) => {
@@ -98,7 +99,7 @@ export const FullscreenMenuModal: React.FC<FullscreenMenuModalProps> = ({
                 }}
                 className="w-full py-3 px-5 rounded-xl bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all cursor-pointer"
               >
-                <span>Choose a template</span>
+                <span>টেমপ্লেট বেছে নিন</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -111,7 +112,7 @@ export const FullscreenMenuModal: React.FC<FullscreenMenuModalProps> = ({
                 transition={{ delay: 0.1, duration: 0.3 }}
                 className="text-xl sm:text-3xl font-bold tracking-tight text-[#1A120B] mb-3 sm:mb-5 font-serif-luxury"
               >
-                Explore Menu
+                মেন্যু এক্সপ্লোর করুন
               </motion.h3>
 
               <motion.nav

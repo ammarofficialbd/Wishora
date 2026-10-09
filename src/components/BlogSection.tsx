@@ -260,7 +260,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             </button>
           )}
           <a
-            href="https://wa.me/880123228230?text=Hello%20Wishora!%20I%20read%20your%20blog%20and%20want%20to%20order%20a%20custom%20invite."
+            href="https://wa.me/8801411390983?text=Hello%20Wishora!%20I%20read%20your%20blog%20and%20want%20to%20order%20a%20custom%20invite."
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full bg-white hover:bg-[#FAF4EC] text-[#2B1724] text-xs sm:text-sm font-semibold active:scale-95 transition-all border border-[#D5C2AF] shadow-xs cursor-pointer flex items-center gap-1.5"

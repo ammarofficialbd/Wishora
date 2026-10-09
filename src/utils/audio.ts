@@ -48,10 +48,57 @@ class AudioController {
     } catch {}
   }
 
+  public playChime() {
+    try {
+      this.initContext();
+      const notes = [659.25, 830.61, 987.77, 1318.51];
+      notes.forEach((f, i) => {
+        setTimeout(() => this.playTone(f, 'sine', 0.8, 0.12), i * 70);
+      });
+    } catch {}
+  }
+
+  public playBlowCandles() {
+    try {
+      this.initContext();
+      this.playTone(340, 'triangle', 0.4, 0.15);
+      setTimeout(() => this.playTone(280, 'sine', 0.6, 0.1), 120);
+      setTimeout(() => this.playTone(440, 'sine', 0.9, 0.08), 240);
+    } catch {}
+  }
+
   public playPopEffect() {
     try {
       this.initContext();
       this.playTone(620, 'sine', 0.12, 0.18);
+    } catch {}
+  }
+
+  public playKeyTap() {
+    try {
+      this.initContext();
+      this.playTone(720, 'sine', 0.05, 0.08);
+    } catch {}
+  }
+
+  public playKeyError() {
+    try {
+      this.initContext();
+      this.playTone(220, 'sawtooth', 0.15, 0.12);
+      setTimeout(() => this.playTone(180, 'sawtooth', 0.2, 0.12), 100);
+    } catch {}
+  }
+
+  public playUnlockSuccess() {
+    try {
+      this.initContext();
+      // Celebratory cheerful chord / arpeggio
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+      notes.forEach((freq, idx) => {
+        setTimeout(() => {
+          this.playTone(freq, 'sine', 0.6, 0.15);
+        }, idx * 90);
+      });
     } catch {}
   }
 

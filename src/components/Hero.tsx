@@ -24,19 +24,19 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-1',
       templateId: 'rajwada-vivah',
-      title: 'Royal Heritage',
-      subtitle: 'Royal Wedding',
-      couple: 'Farhan & Samira',
-      category: 'Wedding',
+      title: 'রয়্যাল হেরিটেজ বিবাহ',
+      subtitle: 'অভিজাত রাজকীয় থিম',
+      couple: 'ফারহান ও সামিরা',
+      category: 'বিবাহ নিমন্ত্রণ',
       image: royalWeddingImg
     },
     {
       id: 'hero-2',
       templateId: 'first-birthday-wonderland',
-      title: 'First Birthday Wonderland',
-      subtitle: 'Magical Celebration',
-      couple: 'Ayaan’s 1st Birthday',
-      category: 'Birthday',
+      title: 'প্রথম জন্মদিন ওয়ান্ডারল্যান্ড',
+      subtitle: 'জাদুকরী শৈশব উৎসব',
+      couple: 'আয়ান (১ম জন্মদিন)',
+      category: 'জন্মদিন',
       image: '/assets/wishora-birth-template.jpg'
     }
   ];
@@ -46,19 +46,19 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-3',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Surprise',
-      subtitle: 'Surprise Countdown',
-      couple: 'Ahnaf’s Birthday Surprise',
-      category: 'Birthday',
+      title: 'গোল্ডেন বার্থডে সারপ্রাইজ',
+      subtitle: 'লাইভ কাউন্টডাউন ও কেক কাটিং',
+      couple: 'আহনাফের জন্মদিন সারপ্রাইজ',
+      category: 'জন্মদিন সারপ্রাইজ',
       image: birthdayGalaImg
     },
     {
       id: 'hero-4',
       templateId: 'save-the-sunset',
-      title: 'Sunset Save The Date',
-      subtitle: 'Beachfront Destination',
-      couple: 'Zayan & Ayla',
-      category: 'Save the Date',
+      title: 'সানসেট সেভ দ্য ডেট',
+      subtitle: 'সি-বিচ ডেস্টিনেশন বিবাহ',
+      couple: 'জায়ান ও আয়লা',
+      category: 'তারিখ সংরক্ষণ',
       image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80'
     }
   ];
@@ -68,19 +68,19 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-5',
       templateId: 'first-birthday-wonderland',
-      title: 'Ayaan’s 1st Birthday',
-      subtitle: 'Burgundy & Gold Balloons',
-      couple: 'Ayaan (1st Birthday)',
-      category: 'Birthday',
+      title: 'আয়ানের ১ম জন্মদিন',
+      subtitle: 'বার্গান্ডি বেলুন ও ভালোবাসার স্মৃতি',
+      couple: 'আয়ান ও পরিবার',
+      category: 'জন্মদিন',
       image: '/assets/wishora-birth-template.jpg'
     },
     {
       id: 'hero-6',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Surprise',
-      subtitle: 'Surprise Countdown',
-      couple: 'Ahnaf’s Birthday Surprise',
-      category: 'Birthday',
+      title: 'গোল্ডেন বার্থডে সারপ্রাইজ',
+      subtitle: 'লাইভ কাউন্টডাউন ও সারপ্রাইজ',
+      couple: 'আহনাফের জন্য ভালোবাসার উপহার',
+      category: 'জন্মদিন সারপ্রাইজ',
       image: birthdayGalaImg
     }
   ];
@@ -90,19 +90,19 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-7',
       templateId: 'rajwada-vivah',
-      title: 'Royal Heritage Vivah',
-      subtitle: 'Regal Arch & Gold Foil',
-      couple: 'Farhan & Samira',
-      category: 'Royal Wedding',
+      title: 'রয়্যাল হেরিটেজ বিবাহ',
+      subtitle: 'স্বর্ণালী নকশা ও ওয়াক্স সিল',
+      couple: 'ফারহান ও সামিরা',
+      category: 'রাজকীয় বিবাহ',
       image: royalWeddingImg
     },
     {
       id: 'hero-8',
       templateId: 'first-birthday-wonderland',
-      title: 'First Birthday Wonderland',
-      subtitle: 'Magical Celebration',
-      couple: 'Ayaan’s 1st Birthday',
-      category: 'Birthday',
+      title: 'প্রথম জন্মদিন ওয়ান্ডারল্যান্ড',
+      subtitle: 'স্মৃতিময় ছবির গল্প',
+      couple: 'আয়ান (১ম জন্মদিন)',
+      category: 'জন্মদিন',
       image: '/assets/wishora-birth-template.jpg'
     }
   ];
@@ -112,19 +112,19 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
     {
       id: 'hero-9',
       templateId: 'golden-birthday-gala',
-      title: 'Golden Birthday Surprise',
-      subtitle: 'Balloons & Cake Cutting',
-      couple: 'Ahnaf & Family',
-      category: 'Birthday',
+      title: 'গোল্ডেন বার্থডে সারপ্রাইজ',
+      subtitle: 'বেলুন পপ ও শুভেচ্ছা চিঠি',
+      couple: 'আহনাফ ও পরিবার',
+      category: 'জন্মদিন',
       image: birthdayGalaImg
     },
     {
       id: 'hero-10',
       templateId: 'rajwada-vivah',
-      title: 'Royal Heritage Vivah',
-      subtitle: 'Grand Wedding Reception',
-      couple: 'Farhan & Samira',
-      category: 'Wedding',
+      title: 'রয়্যাল হেরিটেজ বিবাহ',
+      subtitle: 'গ্র্যান্ড রিসেপশন ও নিকাহ',
+      couple: 'ফারহান ও সামিরা',
+      category: 'বিবাহ নিমন্ত্রণ',
       image: royalWeddingImg
     }
   ];
@@ -176,7 +176,7 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
       {/* Hover "Live Preview" Popup Indicator */}
       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 z-20 backdrop-blur-[2px]">
         <span className="px-4 py-2 rounded-full bg-white text-[#181210] font-bold text-xs sm:text-sm shadow-xl flex items-center gap-1.5 transform group-hover:scale-105 transition-transform">
-          <span>Live Demo</span>
+          <span>লাইভ ডেমো দেখুন</span>
           <ArrowUpRight className="w-4 h-4 text-[#A81B5B]" />
         </span>
       </div>
@@ -192,29 +192,28 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
         {/* Top Kicker */}
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-600/30 text-[#8C5D2E] text-xs sm:text-sm font-semibold mb-4">
           <span className="text-amber-600">✦</span>
-          <span>For moments worth remembering</span>
+          <span>চিরকাল মনে রাখার মতো মুহূর্তের জন্য</span>
           <span className="text-amber-600">✦</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-[30px] sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-[#2B1724] tracking-tight leading-[38px] sm:leading-[1.14] mb-5 font-serif-luxury max-w-4xl mx-auto">
-          Turn a Special Moment Into<br />
-          <span className="font-bold text-[#7A0C38]">Something They’ll Never Forget.</span>
+        <h1 className="text-[26px] md:text-[52px] font-bold text-[#2B1724] tracking-tight leading-snug md:leading-[1.2] mb-5 font-serif-luxury max-w-5xl mx-auto">
+          একটি বিশেষ মুহূর্তকে রূপ দিন এমন কিছুতে, <span className="font-bold text-[#7A0C38]">যা তারা আজীবন ভালোবেসে মনে রাখবে।</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-[#5A454F] text-base sm:text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed mb-8">
-          Beautiful, personalized digital experiences made for birthdays, anniversaries, proposals, weddings, and the people who mean the most.
+          জন্মদিন, বিবাহবার্ষিকী, বিশেষ প্রপোজাল কিংবা বিয়ের নিমন্ত্রণ—সবচেয়ে প্রিয় মানুষটির জন্য তৈরি করুন মন ছোঁয়া ডিজিটাল অভিজ্ঞতা।
         </p>
 
         {/* Primary CTA Button */}
-        <div className="flex justify-center items-center mb-8 sm:mb-10">
+        <div className="flex justify-center items-center mb-[92px] sm:mb-[100px]">
           <button
             onClick={onChooseTemplate}
             id="hero-choose-template-btn"
             className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-base font-semibold border border-rose-300/30 hover:scale-105 active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(122,12,56,0.4)] hover:shadow-[0_16px_36px_-6px_rgba(122,12,56,0.55)] cursor-pointer flex items-center gap-2 group"
           >
-            <span>Choose a template</span>
+            <span>টেমপ্লেট বেছে নিন</span>
             <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
         </div>
@@ -233,9 +232,9 @@ export const Hero: React.FC<HeroProps> = ({ onChooseTemplate, onSelectTemplate }
       */}
       <div className="relative w-full h-[540px] sm:h-[640px] md:h-[700px] lg:h-[740px] overflow-hidden pause-on-hover select-none">
         
-        {/* Top & Bottom Soft Fade Masks */}
-        <div className="absolute inset-x-0 top-0 h-20 sm:h-28 bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/90 to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent z-20 pointer-events-none" />
+        {/* Top & Bottom Soft Fade Masks - Slim height & subtle fade */}
+        <div className="absolute inset-x-0 top-0 h-6 sm:h-10 bg-gradient-to-b from-[#FAF8F5]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-6 sm:h-10 bg-gradient-to-t from-[#FAF8F5]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Left & Right Soft Fade Masks */}
         <div className="absolute left-0 inset-y-0 w-12 sm:w-28 bg-gradient-to-r from-[#FAF8F5] to-transparent z-20 pointer-events-none" />

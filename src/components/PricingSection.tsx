@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Check, ArrowRight } from 'lucide-react';
+import { Sparkles, Check, ArrowRight, MessageCircle } from 'lucide-react';
 
 interface PricingSectionProps {
   onChoosePackage?: (packageName: string, price: string) => void;
@@ -19,11 +19,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
     premium: '999',
   };
 
+  const getWhatsAppUrl = (pkgName: string, price: string) => {
+    const message = `হ্যালো Wishora! আমি আপনাদের "${pkgName}" প্যাকেজটি (${currentPrices.symbol}${price}) অর্ডার করতে আগ্রহী। অনুগ্রহ করে বিস্তারিত প্রসেস ও অর্ডারের নিয়ম জানাবেন।`;
+    return `https://wa.me/8801411390983?text=${encodeURIComponent(message)}`;
+  };
+
   const handleSelect = (tier: string, price: string) => {
     if (onChoosePackage) {
       onChoosePackage(tier, `${currentPrices.symbol}${price}`);
-    } else if (onChooseTemplate) {
-      onChooseTemplate();
     }
   };
 
@@ -48,15 +51,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-600/30 text-[#8C5D2E] text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase mb-4 font-display">
             <span>✦</span>
-            <span>TRANSPARENT PRICING</span>
+            <span>স্বচ্ছ ও সাশ্রয়ী প্যাকেজ</span>
             <span>✦</span>
           </div>
-          <h2 className="text-[24px] sm:text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-5 font-serif-luxury">
-            Choose the Experience That Fits<br />
-            <span className="font-bold text-[#7A0C38]">Your Moment.</span>
+          <h2 className="text-[24px] sm:text-4xl md:text-[44px] lg:text-[44px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.2] mb-5 font-serif-luxury">
+            আপনার মুহূর্তের সাথে মানানসই<br />
+            <span className="font-bold text-[#7A0C38]">প্যাকেজটি বেছে নিন।</span>
           </h2>
           <p className="text-[#68535F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
-            Every creation is bespoke, crafted with immersive music, responsive 3D animations, and lifetime instant updates.
+            প্রতিটি সৃষ্টি বিশেষভাবে তৈরি—আবহ সঙ্গীত, জীবন্ত ৩ডি অ্যানিমেশন এবং স্মৃতিময় অভিজ্ঞতার সমন্বয়ে।
           </p>
         </div>
 
@@ -68,17 +71,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             <div>
               {/* Kicker */}
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#9D768B] mb-3 font-display">
-                STARTER
+                স্টার্টার
               </p>
 
               {/* Title */}
               <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
-                For Simple Surprises
+                সহজ ও মিষ্টি সারপ্রাইজের জন্য
               </h3>
 
               {/* Price */}
               <div className="flex items-baseline gap-1.5 mb-6">
-                <span className="text-sm font-serif-luxury text-[#9D768B]">From</span>
+                <span className="text-sm font-serif-luxury text-[#9D768B]">শুরু মাত্র</span>
                 <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#9A3412]">
                   {currentPrices.symbol}{currentPrices.starter}
                 </span>
@@ -91,35 +94,39 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Personalized design</span>
+                  <span>ব্যক্তিগত কাস্টমাইজড ডিজাইন</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Name &amp; custom message</span>
+                  <span>নাম ও আন্তরিক শুভেচ্ছা বার্তা</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Photo gallery</span>
+                  <span>ফটো অ্যালবাম ও গ্যালারি</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Background music player</span>
+                  <span>ব্যাকগ্রাউন্ড মিউজিক প্লেয়ার</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Private shareable link</span>
+                  <span>প্রাইভেট শেয়ারেবল লিংক</span>
                 </li>
               </ul>
             </div>
 
             {/* CTA Button */}
-            <button
+            <a
+              href={getWhatsAppUrl('স্টার্টার', currentPrices.starter)}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => handleSelect('Starter', currentPrices.starter)}
               id="choose-starter-btn"
-              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-[#F3E2EC] text-[#831843] border border-[#E2CBD8] hover:border-[#D4AEC5] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs"
+              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-emerald-50 text-[#831843] hover:text-emerald-800 border border-[#E2CBD8] hover:border-emerald-300 text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs flex items-center justify-center gap-2 group"
             >
-              CHOOSE STARTER
-            </button>
+              <MessageCircle className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
+              <span>স্টার্টার প্যাকেজ নিন</span>
+            </a>
           </div>
 
           {/* Card 2: Memories (MOST POPULAR - Highlighted) */}
@@ -127,23 +134,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             
             {/* "MOST POPULAR" Floating Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(122,12,56,0.35)] whitespace-nowrap">
-              MOST POPULAR
+              সবচেয়ে জনপ্রিয়
             </div>
 
             <div>
               {/* Kicker */}
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#7A0C38] mb-3 font-display">
-                MEMORIES
+                মেমোরিজ
               </p>
 
               {/* Title */}
               <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
-                For Deeper Storytelling
+                গভীর অনুভূতির গল্প সাজাতে
               </h3>
 
               {/* Price */}
               <div className="flex items-baseline gap-1.5 mb-6">
-                <span className="text-sm font-serif-luxury text-[#7A0C38]">From</span>
+                <span className="text-sm font-serif-luxury text-[#7A0C38]">শুরু মাত্র</span>
                 <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#7A0C38]">
                   {currentPrices.symbol}{currentPrices.memories}
                 </span>
@@ -156,35 +163,39 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#4E3946]">
                 <li className="flex items-center gap-3 font-bold text-[#7A0C38]">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Everything in Starter</span>
+                  <span>স্টার্টার প্যাকেজের সবকিছু</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Extended photo memories</span>
+                  <span>আরও বেশি ছবির সুন্দর অ্যালবাম</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Personal letter chapter</span>
+                  <span>ব্যক্তিগত চিঠি বা বার্তার অধ্যায়</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Interactive memory timeline</span>
+                  <span>ইন্টারেক্টিভ মেমোরি টাইমলাইন</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Video support</span>
+                  <span>ভিডিও যুক্ত করার সুবিধা</span>
                 </li>
               </ul>
             </div>
 
             {/* CTA Button */}
-            <button
+            <a
+              href={getWhatsAppUrl('মেমোরিজ', currentPrices.memories)}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => handleSelect('Memories', currentPrices.memories)}
               id="choose-memories-btn"
-              className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_20px_rgba(122,12,56,0.35)] active:scale-95 cursor-pointer"
+              className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-[0_4px_20px_rgba(122,12,56,0.35)] active:scale-95 cursor-pointer flex items-center justify-center gap-2 group"
             >
-              CHOOSE MEMORIES
-            </button>
+              <MessageCircle className="w-4 h-4 text-emerald-300 fill-emerald-300/20 group-hover:scale-110 transition-transform" />
+              <span>মেমোরিজ প্যাকেজ নিন</span>
+            </a>
           </div>
 
           {/* Card 3: Premium */}
@@ -192,17 +203,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             <div>
               {/* Kicker */}
               <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#B45309] mb-3 font-display">
-                PREMIUM
+                প্রিমিয়াম
               </p>
 
               {/* Title */}
               <h3 className="text-[22px] font-serif-luxury text-[#2B1724] mb-4 leading-snug">
-                Unforgettable Moments
+                অবিস্মরণীয় রাজকীয় আয়োজন
               </h3>
 
               {/* Price */}
               <div className="flex items-baseline gap-1.5 mb-6">
-                <span className="text-sm font-serif-luxury text-[#9D768B]">From</span>
+                <span className="text-sm font-serif-luxury text-[#9D768B]">শুরু মাত্র</span>
                 <span className="text-3xl sm:text-4xl font-serif-luxury font-bold text-[#B45309]">
                   {currentPrices.symbol}{currentPrices.premium}
                 </span>
@@ -215,35 +226,39 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-[#5B4853]">
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Fully bespoke storyline</span>
+                  <span>সম্পূর্ণ কাস্টমাইজড স্টোরিলাইন</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Advanced interactive animations</span>
+                  <span>অ্যাডভান্সড ৩ডি অ্যানিমেশন</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Photo + video memory chapters</span>
+                  <span>ছবি ও ভিডিওর বিশেষ চ্যাপ্টার</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Custom reveal section</span>
+                  <span>কাস্টম রিভিল সারপ্রাইজ সেকশন</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-[#A81B5B] text-xs">✦</span>
-                  <span>Premium audio &amp; ending</span>
+                  <span>প্রিমিয়াম সাউন্ডট্র্যাক ও এন্ডিং</span>
                 </li>
               </ul>
             </div>
 
             {/* CTA Button */}
-            <button
+            <a
+              href={getWhatsAppUrl('প্রিমিয়াম', currentPrices.premium)}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => handleSelect('Premium', currentPrices.premium)}
               id="choose-premium-btn"
-              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-[#F3E2EC] text-[#831843] border border-[#E2CBD8] hover:border-[#D4AEC5] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs"
+              className="w-full py-3.5 px-6 rounded-full bg-[#FAF0F5] hover:bg-emerald-50 text-[#831843] hover:text-emerald-800 border border-[#E2CBD8] hover:border-emerald-300 text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 active:scale-95 cursor-pointer shadow-xs flex items-center justify-center gap-2 group"
             >
-              CHOOSE PREMIUM
-            </button>
+              <MessageCircle className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
+              <span>প্রিমিয়াম প্যাকেজ নিন</span>
+            </a>
           </div>
 
         </div>
@@ -252,15 +267,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
         <div className="mt-14 max-w-2xl mx-auto text-center p-4 rounded-2xl bg-white/90 border border-[#E7D6DE] text-xs text-[#68535F] flex flex-wrap items-center justify-center gap-4 sm:gap-8 shadow-xs">
           <div className="flex items-center gap-2">
             <span className="text-emerald-600 font-bold">✓</span>
-            <span>24h Turnaround on WhatsApp</span>
+            <span>হোয়াটসঅ্যাপে ২৪ ঘণ্টার মধ্যে ডেলিভারি</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-emerald-600 font-bold">✓</span>
-            <span>2 Free Rounds of Edits</span>
+            <span>২ বার ফ্রি রিভিশন সুবিধা</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-amber-600 font-bold">✦</span>
-            <span>100% Satisfaction Guarantee</span>
+            <span>১০০% সন্তুষ্টির নিশ্চয়তা</span>
           </div>
         </div>
       </div>

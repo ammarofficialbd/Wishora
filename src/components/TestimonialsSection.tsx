@@ -22,14 +22,14 @@ export const TestimonialsSection: React.FC = () => {
         {/* Muted Uppercase Kicker */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE8DD] border border-[#E2D6C5] text-[#8C6239] text-[11px] font-semibold tracking-[0.2em] uppercase font-sans mb-4">
           <Heart className="w-3 h-3 text-[#B07238] fill-current" />
-          <span>Real Celebrations • Real Stories</span>
+          <span>বাস্তব উৎসব • ভালোবাসার স্মৃতি</span>
         </div>
 
         {/* Main Headline */}
-        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] mb-4 font-serif-luxury">
-          Don't Take Our Word for It.<br />
+        <h2 className="text-[24px] sm:text-4xl md:text-[44px] lg:text-[44px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.2] mb-4 font-serif-luxury">
+          আমাদের কথা নয়,<br />
           <span className="font-bold text-[#7A0C38]">
-            Here's What Real Couples Are Saying
+            শুনুন তাদের মিষ্টি অনুভূতির গল্প
           </span>
         </h2>
 
@@ -41,11 +41,11 @@ export const TestimonialsSection: React.FC = () => {
                 <Star key={i} className="w-3.5 h-3.5 fill-current" />
               ))}
             </div>
-            <span className="font-bold text-[#181210]">4.9 / 5.0</span>
+            <span className="font-bold text-[#181210]">৪.৯ / ৫.০</span>
           </div>
           <span className="hidden sm:inline text-[#C8B8A6]">•</span>
           <span className="text-[#6B5A50] font-normal text-center leading-relaxed">
-            Over 300+ couples across Bangladesh &amp; worldwide
+            দেশ-বিদেশের ৩০০+ এর বেশি পরিবার ও কাপলদের অকৃত্রিম ভালোবাসা
           </span>
         </div>
       </div>
@@ -132,11 +132,6 @@ export const TestimonialsSection: React.FC = () => {
                   <h4 className="text-base sm:text-lg font-bold text-white tracking-wide font-sans text-center">
                     {item.names}
                   </h4>
-
-                  {/* Centered Role / Subtitle in Muted Gray */}
-                  <p className="text-[11px] sm:text-xs text-stone-300/80 font-normal tracking-wide text-center mt-0.5">
-                    {item.relation}
-                  </p>
                 </div>
               </div>
             ))}

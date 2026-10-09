@@ -1,76 +1,43 @@
 import { TestimonialItem } from '../types';
+import farzanaAnniImg from '../assets/images/farzana anni.jpg';
+import jesminAraImg from '../assets/images/jesmin ara.jpg';
+import taniaImg from '../assets/images/tania.jpg';
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: '1',
-    names: 'Tanvir & Nusrat',
-    relation: '(Bride and groom • Dhaka)',
+    names: 'ফারজানা আন্নি',
+    relation: 'কনে • ধানমন্ডি, ঢাকা',
     rating: 5,
-    quote: 'From the Bismillah to the very last animation it felt so personal and elegant. Our relatives actually called to ask where we got it made. Everyone was amazed!',
-    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80',
-    tag: 'Verified Couple'
+    quote: 'সত্যি বলতে বিয়ের কার্ড নিয়ে অনেক দ্বিধায় ছিলাম। কিন্তু উইশোরা থেকে যখন লিঙ্কটা পেলাম, দেখে মনটাই জুড়িয়ে গেল! ওয়াক্স সিল খুলে সানাইয়ের সুর বাজতেই আত্মীয়-স্বজনরা ফোন দিয়ে প্রশংসা করছিল— অনেকেই জানতে চেয়েছিল কীভাবে এমন রাজকীয় কার্ড বানালাম। ১০০ তে ১০০ দেওয়ার মতো অভিজ্ঞতা!',
+    image: farzanaAnniImg,
+    tag: 'যাচাইকৃত কনে'
   },
   {
     id: '2',
-    names: 'Farhan & Samira',
-    relation: '(Bride and groom • Chittagong)',
+    names: 'জেসমিন আরা',
+    relation: 'বরের মা • নাসিরাবাদ, চট্টগ্রাম',
     rating: 5,
-    quote: 'This invite is so beautiful! The detailing, background music, and smooth wax seal animation made our wedding announcement truly unforgettable.',
-    image: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80',
-    tag: 'Guest Experience'
+    quote: 'ছেলের বিয়ের দাওয়াত নিয়ে অনেক আত্মীয় ফোন দিয়ে বলেছে— "ভাবি, এত সুন্দর কার্ড তো কখনো দেখিনি!" বয়স্করাও এক ক্লিকে গুগল ম্যাপ দেখে সরাসরি ভেন্যুতে চলে আসতে পেরেছেন, কাউকে পথ হারানোর ঝামেলা পোহাতে হয়নি। ব্যাকগ্রাউন্ড মিউজিকটা সবার মন ছুঁয়ে গেছে। আপনাদের আন্তরিকতায় আমরা ভীষণ খুশি।',
+    image: jesminAraImg,
+    tag: 'অভিভাবকের পছন্দ'
   },
   {
     id: '3',
-    names: 'Samir & Taskin',
-    relation: "(Ayaan's 1st Birthday • Dhaka)",
+    names: 'সমীর ও তাসকিন',
+    relation: 'আয়ানের অভিভাবক • উত্তরা, ঢাকা',
     rating: 5,
-    quote: 'We created a magical 1st Birthday celebration page for Ayaan with music and interactive photo stories. Everyone who opened the link was completely in awe!',
+    quote: 'আমাদের রাজপুত্তুর আয়ানের ১ বছর পূর্তিতে একটু স্পেশাল সারপ্রাইজ দিতে চেয়েছিলাম। ওর জন্মের পর থেকে প্রতি মাসের স্মৃতির ছবি আর মিষ্টি ব্যাকগ্রাউন্ড গান দেখে নানা-নানী, দাদা-দাদীর চোখে আনন্দাশ্রু চলে এসেছিল! আত্মীয়রা বলছিল জন্মদিনের সেরা উপহার ছিল এই ডিজিটাল কার্ডটাই।',
     image: '/assets/wishora-birth-template.jpg',
-    tag: 'Birthday Wish'
+    tag: '১ম জন্মদিন উৎসব'
   },
   {
     id: '4',
-    names: 'Zayan & Ayla',
-    relation: '(Destination Wedding • Cox\'s Bazar)',
+    names: 'তানিয়া ও ফাহিম',
+    relation: 'যুক্তরাজ্য প্রবাসী জুটি • সিলেট',
     rating: 5,
-    quote: 'Half our guests were joining from abroad and a paper card would never reach them in time. We shared our link on WhatsApp and everyone had maps and timings instantly.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    tag: 'Destination Celebration'
-  },
-  {
-    id: '5',
-    names: 'Rayhan & Sadia',
-    relation: '(Engagement Couple • Dhaka)',
-    rating: 5,
-    quote: 'The proposal countdown and interactive photo gallery got so many emotional compliments from our closest friends and family. Absolutely magical.',
-    image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80',
-    tag: 'Engagement Review'
-  },
-  {
-    id: '6',
-    names: 'Shahadat & Tahsin',
-    relation: '(Bride and groom • Rajshahi)',
-    rating: 5,
-    quote: 'Our elders and guests of all ages opened it on their phones effortlessly. It felt like receiving a royal personal invitation delivered right to their hands.',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
-    tag: 'Family Loved'
-  },
-  {
-    id: '7',
-    names: 'Adnan & Mahira',
-    relation: '(Bride and groom • Uttara)',
-    rating: 5,
-    quote: 'The live RSVP dashboard saved us days of phone calls! Plus, the audio accompaniment made everyone tear up before the ceremony even began.',
-    image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80',
-    tag: 'Verified Couple'
-  },
-  {
-    id: '8',
-    names: 'Saif & Navila',
-    relation: '(Bride and groom • Gulshan)',
-    rating: 5,
-    quote: 'The aesthetic is world-class. From the typography to the golden sheen, it felt like an invitation crafted for royalty. Highly recommended!',
-    image: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80',
-    tag: 'Verified Couple'
+    quote: 'আমাদের অনেক মেহমান দেশের বাইরে থাকেন, লন্ডনে কাগজের কার্ড পাঠানো অসম্ভব ছিল। হোয়াটসঅ্যাপে এই ডিজিটাল কার্ডের লিংক পাঠাতেই সবাই ভীষণ খুশি হয়েছে। টাইমার, লোকেশন ম্যাপ আর আরএসভিপি বাটন থাকায় সবাই সময়মতো কনফার্ম করেছে। কাগজ আর টাকা দুটোই বাঁচল, সম্মানও বাড়ল!',
+    image: taniaImg,
+    tag: 'যাচাইকৃত জুটি'
   }
 ];

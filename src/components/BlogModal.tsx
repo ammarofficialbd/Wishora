@@ -248,7 +248,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({
                       </button>
                     )}
                     <a
-                      href={`https://wa.me/880123228230?text=${encodeURIComponent(`Hi Wishora, I read your blog article "${post.title}" and would like to order or customize the "${relatedTemplate.name}" template!`)}`}
+                      href={`https://wa.me/8801411390983?text=${encodeURIComponent(`Hi Wishora, I read your blog article "${post.title}" and would like to order or customize the "${relatedTemplate.name}" template!`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold tracking-wide transition-all shadow-md active:scale-95 cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap"

@@ -48,54 +48,54 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
               <Check className="w-7 h-7" />
             </div>
             <h3 className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#2B1724]">
-              Inquiry Sent! ✨
+              অনুরোধ সফলভাবে পাঠানো হয়েছে! ✨
             </h3>
             <p className="text-xs sm:text-sm text-[#5A454F] leading-relaxed">
-              Our bespoke design director will connect with you on WhatsApp at <strong>{contact}</strong> within 3 hours.
+              আমাদের ডিজাইন টিম আগামী ৩ ঘণ্টার মধ্যে <strong>{contact}</strong> নম্বরে হোয়াটসঅ্যাপে যোগাযোগ করবে।
             </p>
             <button
               onClick={onClose}
               className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] text-white text-xs sm:text-sm font-semibold hover:brightness-110 active:scale-95 transition-all shadow-xs cursor-pointer"
             >
-              Close
+              বন্ধ করুন
             </button>
           </div>
         ) : (
           <div>
             <div className="flex items-center gap-2 text-[#8C5D2E] text-xs font-bold uppercase tracking-wider mb-1">
               <Sparkles className="w-3.5 h-3.5 text-[#A81B5B]" />
-              <span>Bespoke Design Service</span>
+              <span>কাস্টম ডিজাইন সার্ভিস</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#2B1724] mb-1.5 leading-tight">
-              Have something unique in mind?
+              বিশেষ কোনো ভাবনা বা আইডিয়া আছে আপনার?
             </h3>
             <p className="text-xs text-[#5A454F] mb-5 leading-relaxed">
-              From royal floral themes to destination celebrations, our design team crafts customized digital invites for any event.
+              রাজকীয় বিবাহ থেকে শুরু করে ডেস্টিনেশন সেলিব্রেশন—যেকোনো উৎসবের জন্য আমাদের টিম তৈরি করবে আপনার মনের মতো ডিজিটাল কার্ড।
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 text-left">
               <div>
-                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">Occasion Type</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">আয়োজনের ধরন</label>
                 <select
                   value={occasionType}
                   onChange={(e) => setOccasionType(e.target.value)}
                   className="w-full text-base sm:text-xs p-2.5 rounded-xl border border-[#E8DDCF] bg-white cursor-pointer"
                 >
-                  <option value="Custom Wedding Theme">Custom Theme Wedding</option>
-                  <option value="Holy Nikah & Walima">Holy Nikah &amp; Walima</option>
-                  <option value="Gaye Holud / Mehendi Night">Gaye Holud / Mehendi Night</option>
-                  <option value="Birthday Gala & Surprise">Birthday Gala &amp; Surprise</option>
-                  <option value="Anniversary & Silver Jubilee">Anniversary &amp; Silver Jubilee</option>
-                  <option value="Other Celebration">Other Celebration</option>
+                  <option value="Custom Wedding Theme">কাস্টম বিবাহ থিম</option>
+                  <option value="Holy Nikah & Walima">পবিত্র নিকাহ ও ওয়ালিমা</option>
+                  <option value="Gaye Holud / Mehendi Night">গায়ে হলুদ ও মেহেন্দি রাত</option>
+                  <option value="Birthday Gala & Surprise">জন্মদিন উৎসব ও সারপ্রাইজ</option>
+                  <option value="Anniversary & Silver Jubilee">বিবাহবার্ষিকী ও জুবিলি</option>
+                  <option value="Other Celebration">অন্যান্য বিশেষ উৎসব</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">Your Name *</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">আপনার নাম *</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Radhika / Tanvir"
+                  placeholder="যেমন: তানভীর / অনন্যা"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full text-base sm:text-xs p-2.5 rounded-xl border border-[#E8DDCF] bg-white"
@@ -103,11 +103,11 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
               </div>
 
               <div>
-                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">WhatsApp Number or Email *</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">হোয়াটসঅ্যাপ নম্বর বা ইমেইল *</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. 01712345678"
+                  placeholder="যেমন: 01712345678"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
                   className="w-full text-base sm:text-xs p-2.5 rounded-xl border border-[#E8DDCF] bg-white"
@@ -115,10 +115,10 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
               </div>
 
               <div>
-                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">Describe your vision</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-[#2B1724] uppercase mb-1">আপনার ভাবনা বা বিস্তারিত বলুন</label>
                 <textarea
                   rows={3}
-                  placeholder="Tell us about the theme, colors, background music, or special requests..."
+                  placeholder="পছন্দের কালার থিম, মিউজিক বা বিশেষ কোনো ফিচারের কথা আমাদের জানান..."
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                   className="w-full text-base sm:text-xs p-2.5 rounded-xl border border-[#E8DDCF] bg-white"
@@ -130,7 +130,7 @@ export const CustomInquiryModal: React.FC<CustomInquiryModalProps> = ({ onClose 
                 className="w-full py-3 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 active:scale-[0.98] text-white text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>Submit Custom Request</span>
+                <span>অনুরোধটি পাঠান</span>
               </button>
             </form>
           </div>

@@ -351,7 +351,7 @@ export const BirthdayMobileWidget: React.FC<BirthdayMobileWidgetProps> = ({
               onClick={scrollToLetter}
               className="mt-4 px-6 py-2.5 rounded-full bg-[#FBEFE9] hover:bg-white text-[#831843] text-xs font-bold tracking-wider uppercase transition-all shadow-lg active:scale-95 flex items-center gap-2 cursor-pointer"
             >
-              <span>Open your surprise</span>
+              <span>সারপ্রাইজটি খুলুন</span>
               <ChevronDown className="w-3.5 h-3.5 text-[#831843]" />
             </button>
           </div>
@@ -796,7 +796,7 @@ export const BirthdayMobileWidget: React.FC<BirthdayMobileWidgetProps> = ({
             className="mt-4 px-6 py-2.5 rounded-full border border-[#E9C98C] text-[#E9C98C] hover:bg-[#E9C98C] hover:text-[#2A0A18] text-xs font-semibold tracking-wider uppercase transition-all flex items-center gap-2 cursor-pointer active:scale-95"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Replay from the start</span>
+            <span>শুরু থেকে পুনরায় দেখুন</span>
           </button>
         </section>
       </div>

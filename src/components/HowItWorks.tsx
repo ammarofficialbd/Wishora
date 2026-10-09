@@ -12,13 +12,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-14">
         <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-500/10 border border-amber-600/20 text-[#8C5D2E] text-[11px] font-bold tracking-widest uppercase mb-3 font-display">
-          <span>EFFORTLESS PROCESS</span>
+          <span>✦ সহজ ৩টি ধাপ ✦</span>
         </div>
-        <h2 className="text-[24px] sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.15] text-center mb-4 font-serif-luxury">
-          Your Dream Invite,<br className="hidden sm:inline" /> Made For You in Minutes
+        <h2 className="text-[24px] sm:text-4xl md:text-[44px] lg:text-[44px] font-bold tracking-tight text-[#2B1724] leading-[34.4px] sm:leading-[1.2] text-center mb-4 font-serif-luxury">
+          আপনার স্বপ্নের নিমন্ত্রণ,<br className="hidden sm:inline" /> তৈরি হবে নিমেষেই
         </h2>
         <p className="text-[#4D3F38] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
-          Pick a design, tell us your details, and we craft your personalized invite. Beautiful, effortless and entirely yours.
+          পছন্দের একটি ডিজাইন বেছে নিন, আপনার গল্প ও তথ্যগুলো জানান—বাকি জাদুকরী রূপ দেওয়ার কাজটুকু আমাদের।
         </p>
       </div>
 
@@ -39,22 +39,22 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
                 />
                 <div className="absolute top-2 left-2 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-xs text-[8px] sm:text-[9px] text-rose-200 font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm border border-rose-300/30">
                   <Heart className="w-2.5 h-2.5 text-[#ff3d6e] fill-[#ff3d6e]" />
-                  <span>Romantic Proposal</span>
+                  <span>রোমান্টিক প্রপোজাল</span>
                 </div>
                 <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-white/95 text-[9px] sm:text-[10px] text-[#7A0C38] font-bold shadow-xs">
-                  ৳699
+                  ৳৬৯৯
                 </div>
               </div>
 
               {/* Template Card Info */}
               <div className="p-2.5 sm:p-3 bg-white text-left">
                 <p className="text-[11px] sm:text-xs font-serif-luxury font-bold text-[#2B1724] leading-tight truncate">
-                  "Will You Marry Me?" 💍
+                  "আমার হবে তো চিরতরে? 💍"
                 </p>
                 <div className="flex items-center justify-between mt-1">
-                  <span className="text-[9px] sm:text-[10px] text-[#7A685D]">Proposal Story</span>
+                  <span className="text-[9px] sm:text-[10px] text-[#7A685D]">ভালোবাসার গল্প</span>
                   <span className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md bg-gradient-to-r from-[#7A0C38] to-[#C7246D] text-white font-semibold shadow-2xs">
-                    Selected ✓
+                    নির্বাচিত ✓
                   </span>
                 </div>
               </div>
@@ -67,11 +67,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
           </div>
 
           <h3 className="text-base font-bold text-[#181210] mb-1.5 font-display flex items-center gap-1.5">
-            <span className="w-5 h-5 rounded-full bg-amber-500/10 text-[#8C5D2E] text-xs flex items-center justify-center font-bold">1</span>
-            <span>Choose a template</span>
+            <span className="w-5 h-5 rounded-full bg-amber-500/10 text-[#8C5D2E] text-xs flex items-center justify-center font-bold">১</span>
+            <span>পছন্দের টেমপ্লেট বেছে নিন</span>
           </h3>
           <p className="text-xs text-[#5A4B43] max-w-xs leading-relaxed">
-            Pick an enchanting design that fits the spirit of your celebration.
+            আপনার উৎসব ও বিশেষ মুহূর্তের সাথে মানানসই সেরা ডিজাইনটি নির্বাচন করুন।
           </p>
         </div>
 
@@ -83,21 +83,21 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
             <div className="w-44 bg-white rounded-xl shadow-lg border border-stone-200 p-3 flex flex-col gap-2">
               <div className="flex items-center justify-between border-b border-stone-100 pb-1.5">
                 <span className="text-[9px] font-bold text-neutral-800 flex items-center gap-1">
-                  <Edit3 className="w-2.5 h-2.5 text-rose-500" /> Edit Details
+                  <Edit3 className="w-2.5 h-2.5 text-rose-500" /> তথ্য দিন
                 </span>
-                <span className="text-[8px] bg-rose-100 text-rose-700 px-1.5 py-0.5 rounded font-semibold">Live</span>
+                <span className="text-[8px] bg-rose-100 text-rose-700 px-1.5 py-0.5 rounded font-semibold">লাইভ</span>
               </div>
               <div className="space-y-1">
                 <div className="text-left">
-                  <span className="text-[7px] text-stone-500 font-semibold">Groom Name</span>
+                  <span className="text-[7px] text-stone-500 font-semibold">বরের নাম</span>
                   <div className="text-[8px] bg-stone-50 border border-stone-200 rounded px-1.5 py-0.5 font-medium text-stone-800">
-                    Kabir
+                    কবির
                   </div>
                 </div>
                 <div className="text-left">
-                  <span className="text-[7px] text-stone-500 font-semibold">Bride Name</span>
+                  <span className="text-[7px] text-stone-500 font-semibold">কনের নাম</span>
                   <div className="text-[8px] bg-stone-50 border border-stone-200 rounded px-1.5 py-0.5 font-medium text-stone-800">
-                    Sara
+                    অনন্যা
                   </div>
                 </div>
               </div>
@@ -105,11 +105,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
           </div>
 
           <h3 className="text-base font-bold text-[#181210] mb-1.5 font-display flex items-center gap-1.5">
-            <span className="w-5 h-5 rounded-full bg-amber-500/10 text-[#8C5D2E] text-xs flex items-center justify-center font-bold">2</span>
-            <span>Make it yours</span>
+            <span className="w-5 h-5 rounded-full bg-amber-500/10 text-[#8C5D2E] text-xs flex items-center justify-center font-bold">২</span>
+            <span>আপনার মনের মতো সাজান</span>
           </h3>
           <p className="text-xs text-[#5A4B43] max-w-xs leading-relaxed">
-            Tell us your names, dates and personal details, and we add the magic.
+            নাম, তারিখ, ব্যক্তিগত স্মৃতি ও বিস্তারিত তথ্য আমাদের জানান, আমরা যুক্ত করব আন্তরিক ছোঁয়া।
           </p>
         </div>
 
@@ -123,24 +123,25 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
                 <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center text-[8px] text-white">
                   <MessageCircle className="w-2.5 h-2.5 fill-white" />
                 </div>
-                <span className="text-[8px] font-bold text-emerald-800">Is your invite ready?</span>
+                <span className="text-[8px] font-bold text-emerald-800">ইনভাইট কি রেডি?</span>
               </div>
               
               <div className="bg-emerald-50 rounded-lg p-2 border border-emerald-200/80 text-left">
-                <p className="text-[7px] text-emerald-700 font-semibold mb-0.5">Yes! Sharing it now 💚</p>
+                <p className="text-[7px] text-emerald-700 font-semibold mb-0.5">হ্যাঁ! লিংক পাঠিয়ে দিয়েছি 💚</p>
                 <div className="bg-white rounded p-1 text-[8px] font-serif-luxury font-bold text-amber-950 text-center shadow-xs">
-                  Aarav weds Ananya ✨
+                  ফারহান ও সামিরার শুভ বিবাহ ✨
                 </div>
-                <p className="text-[6px] text-stone-400 mt-1 text-right">09:41 AM · Delivered ✓✓</p>
+                <p className="text-[6px] text-stone-400 mt-1 text-right">সকাল ০৯:৪১ · ডেলিভার্ড ✓✓</p>
               </div>
             </div>
           </div>
 
-          <h3 className="text-sm font-bold text-neutral-900 mb-1.5 font-display">
-            3 - Delivered on WhatsApp
+          <h3 className="text-sm font-bold text-neutral-900 mb-1.5 font-display flex items-center gap-1.5">
+            <span className="w-5 h-5 rounded-full bg-amber-500/10 text-[#8C5D2E] text-xs flex items-center justify-center font-bold">৩</span>
+            <span>হোয়াটসঅ্যাপে ডেলিভারি নিন</span>
           </h3>
           <p className="text-xs text-stone-500 max-w-xs">
-            Your personalised invite lands on WhatsApp and email.
+            আপনার সম্পূর্ণ প্রস্তুত ডিজিটাল লিংক পৌঁছে যাবে সরাসরি হোয়াটসঅ্যাপ ও ইমেইলে।
           </p>
         </div>
       </div>
@@ -152,7 +153,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onChooseTemplate }) => {
           id="how-it-works-choose-template-btn"
           className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7A0C38] via-[#A81B5B] to-[#C7246D] hover:brightness-110 text-white text-sm font-semibold active:scale-95 transition-all shadow-[0_12px_28px_-6px_rgba(122,12,56,0.35)] cursor-pointer border border-rose-300/30"
         >
-          Choose a template
+          টেমপ্লেট বেছে নিন
         </button>
       </div>
     </section>
